@@ -1,7 +1,7 @@
 constants = {
 'GAMMA': 0.99,  # discount factor for rewards
 'LAMBDA': 1.0,  # lambda of Generalized Advantage Estimation: https://arxiv.org/abs/1506.02438
-'ENTROPY_BETA': 0.01,  # entropy regurarlization constant.
+'ENTROPY_BETA': 0.0005,  # entropy regurarlization constant.
 'ROLLOUT_MAXLEN': 20, # 20 represents the number of 'local steps': the number of timesteps
                     # we run the policy before we update the parameters.
                     # The larger local steps is, the lower is the variance in our policy gradients estimate
@@ -13,7 +13,7 @@ constants = {
 'MAX_GLOBAL_STEPS': 100000000,  # total steps taken across all workers
 'LEARNING_RATE': 1e-4,  # learning rate for adam
 
-'PREDICTION_BETA': 0.01,  # weight of prediction bonus
+'PREDICTION_BETA': 0.2,  # weight of prediction bonus
                           # set 0.5 for unsup=state
 'PREDICTION_LR_SCALE': 10.0,  # scale lr of predictor wrt to policy network
                               # set 30-50 for unsup=state
