@@ -134,9 +134,10 @@ class MarioEnv(gym.Wrapper):
 
     def _reset(self):
         if self.resetCount < 0:
-            print('\nDoing hard mario fceux reset (40 seconds wait) !')
+            print('\nDoing hard mario fceux reset')
             sys.stdout.flush()
             self.env.reset()
+            print(' (40 seconds wait) !')
             time.sleep(40)
         obs, _, _, info = self.env.step(7)  # take right once to start game
         if info.get('ignore', False):  # assuming this happens only in beginning

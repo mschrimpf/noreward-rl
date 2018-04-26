@@ -101,6 +101,7 @@ def run(args, server):
         global_step = sess.run(trainer.global_step)
         logger.info("Starting training at gobal_step=%d", global_step)
         while not sv.should_stop() and (not num_global_steps or global_step < num_global_steps):
+            print("Global step {}/{}".format(global_step, num_global_steps))
             trainer.process(sess)
             global_step = sess.run(trainer.global_step)
 
@@ -159,6 +160,7 @@ Setting up Tensorflow for data parallel work
     parser.add_argument('--delay', default=0, type=int, help='delay start by these many seconds')
     parser.add_argument('--pretrain', type=str, default=None, help="Checkpoint dir (generally ..../train/) to load from.")
     args = parser.parse_args()
+    print("Running with args {}".format(vars(args)))
 
     spec = cluster_spec(args.num_workers, 1, args.psPort)
     cluster = tf.train.ClusterSpec(spec).as_cluster_def()
