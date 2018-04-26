@@ -28,24 +28,17 @@ This is a tensorflow based implementation for our [ICML 2017 paper on curiosity-
   # install the code
   git clone -b master --single-branch https://github.com/pathak22/noreward-rl.git
   cd noreward-rl/
-  virtualenv curiosity
-  source $PWD/curiosity/bin/activate
-  pip install numpy
+  conda env create -f environment.yml
+  conda activate curiosity
   pip install -r src/requirements.txt
-  python curiosity/src/go-vncdriver/build.py
 
   # download models
   bash models/download_models.sh
-
-  # setup customized doom environment
-  cd doomFiles/
-  # then follow commands in doomFiles/README.md
   ```
 
 2. Running demo
   ```Shell
   cd noreward-rl/src/
-  python demo.py --ckpt ../models/doom/doom_ICM
   python demo.py --env-id SuperMarioBros-1-1-v0 --ckpt ../models/mario/mario_ICM
   ```
 

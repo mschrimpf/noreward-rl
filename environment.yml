@@ -1,0 +1,18 @@
+name: curiosity
+channels:
+- defaults
+- conda-forge
+- jeremyschlatter
+dependencies:
+# sudo apt-get install golang python-dev fceux
+# might have to update to gcc-6: https://askubuntu.com/a/781977/693679
+# on WSL:
+# - uninstall pulse to disable sound sudo apt purge libpulse0
+# - install an X-Server, set DSIPLAY variable (https://www.howtogeek.com/261575/how-to-run-graphical-linux-desktop-applications-from-windows-10s-bash-shell/)
+  - python==3.5.*
+  - numpy
+  - scipy
+  - libjpeg-turbo
+  - go-vncdriver
+  - jupyter
+  - pip:
