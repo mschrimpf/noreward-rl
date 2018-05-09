@@ -177,7 +177,7 @@ def train(opt):
             train_writer = tf.summary.FileWriter(opt.log_dir_base + opt.name + '/train', sess.graph)
             val_writer = tf.summary.FileWriter(opt.log_dir_base + opt.name + '/val')
 
-            logger.info("STARTING EPOCH = ", sess.run(global_step))
+            logger.info("STARTING EPOCH = {}".format(sess.run(global_step)))
             ################################################################################################
             # Loop alternating between training and validation.
             ################################################################################################
@@ -202,12 +202,12 @@ def train(opt):
                     # Print accuray and summaries + train steps
                     if iStep == 0:
                         # !train_step
-                        logger.info("* epoch: " + str(float(k) / float(dataset.num_images_epoch)))
+                        logger.info("* epoch: {}".format(float(k) / float(dataset.num_images_epoch)))
                         summ, acc_train = sess.run([merged, accuracy],
                                                    feed_dict={handle: training_handle,
                                                               dropout_rate: opt.hyper.drop_train})
                         train_writer.add_summary(summ, k)
-                        logger.info("train acc: " + str(acc_train))
+                        logger.info("train acc: {}".format(acc_train))
 
                         if acc_train >= 0.5:
                             counter_stop += 1
@@ -223,7 +223,7 @@ def train(opt):
                         summ, acc_val = sess.run([merged, accuracy], feed_dict={handle: validation_handle,
                                                                                 dropout_rate: opt.hyper.drop_test})
                         val_writer.add_summary(summ, k)
-                        logger.info("val acc: " + str(acc_val))
+                        logger.info("val acc: {}".format(acc_val))
                         sys.stdout.flush()
 
                     else:
@@ -260,7 +260,7 @@ def train(opt):
                 acc_tmp += acc_val[0]
 
             val_acc = acc_tmp / float(15)
-            logger.info("Full train acc = " + str(val_acc))
+            logger.info("Full train acc = {}".format(val_acc))
             sys.stdout.flush()
 
             # Run one pass over a batch of the validation dataset.
@@ -272,7 +272,7 @@ def train(opt):
                 acc_tmp += acc_val[0]
 
             val_acc = acc_tmp / float(15)
-            logger.info("Full val acc = " + str(val_acc))
+            logger.info("Full val acc = {}".format(val_acc))
             sys.stdout.flush()
 
             # Run one pass over a batch of the test dataset.
@@ -284,7 +284,7 @@ def train(opt):
                 acc_tmp += acc_val[0]
 
             val_acc = acc_tmp / float(int(dataset.num_images_test / opt.hyper.batch_size))
-            logger.info("Full test acc: " + str(val_acc))
+            logger.info("Full test acc: {}".format(val_acc))
             sys.stdout.flush()
 
             logger.info(":)")
