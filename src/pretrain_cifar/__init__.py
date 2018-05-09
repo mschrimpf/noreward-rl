@@ -4,7 +4,6 @@ import os
 class Dataset(object):
 
     def __init__(self):
-
         # # #
         # Dataset general
         self.dataset_path = ""
@@ -109,6 +108,16 @@ class Experiment(object):
         # Add additional descriptors to Experiments
         self.dataset = Dataset()
         self.hyper = Hyperparameters()
+
+    def __repr__(self):
+        return str(self.get_vars(self))
+
+    def get_vars(self, obj):
+        obj_vars = vars(obj)
+        for key, value in obj_vars.items():
+            if hasattr(value, '__dict__'):
+                obj_vars[key] = self.get_vars(value)
+        return obj_vars
 
     def do_recordings(self, max_epochs):
         self.max_to_keep_checkpoints = 0

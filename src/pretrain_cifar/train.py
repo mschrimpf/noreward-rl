@@ -1,3 +1,4 @@
+import logging
 import os
 import shutil
 import sys
@@ -10,6 +11,8 @@ from model import universeHead
 from pretrain_cifar.data import Cifar10
 from pretrain_cifar import summary, Experiment
 
+logger = logging.getLogger(__name__)
+
 
 def train(opt):
     ################################################################################################
@@ -18,7 +21,7 @@ def train(opt):
 
     model_ctr = universeHead
 
-    print(opt.name)
+    logger.info(opt.name)
     ################################################################################################
 
     ################################################################################################
@@ -147,13 +150,13 @@ def train(opt):
         if not os.path.isfile(opt.log_dir_base + opt.name + '/models/checkpoint'):
             sess.run(tf.global_variables_initializer())
         elif opt.restart:
-            print("RESTART")
+            logger.info("RESTART")
             shutil.rmtree(opt.log_dir_base + opt.name + '/models/')
             shutil.rmtree(opt.log_dir_base + opt.name + '/train/')
             shutil.rmtree(opt.log_dir_base + opt.name + '/val/')
             sess.run(tf.global_variables_initializer())
         else:
-            print("RESTORE")
+            logger.info("RESTORE")
             saver.restore(sess, tf.train.latest_checkpoint(opt.log_dir_base + opt.name + '/models/'))
             flag_testable = True
 
@@ -174,7 +177,7 @@ def train(opt):
             train_writer = tf.summary.FileWriter(opt.log_dir_base + opt.name + '/train', sess.graph)
             val_writer = tf.summary.FileWriter(opt.log_dir_base + opt.name + '/val')
 
-            print("STARTING EPOCH = ", sess.run(global_step))
+            logger.info("STARTING EPOCH = ", sess.run(global_step))
             ################################################################################################
             # Loop alternating between training and validation.
             ################################################################################################
@@ -199,18 +202,19 @@ def train(opt):
                     # Print accuray and summaries + train steps
                     if iStep == 0:
                         # !train_step
-                        print("* epoch: " + str(float(k) / float(dataset.num_images_epoch)))
+                        logger.info("* epoch: " + str(float(k) / float(dataset.num_images_epoch)))
                         summ, acc_train = sess.run([merged, accuracy],
                                                    feed_dict={handle: training_handle,
                                                               dropout_rate: opt.hyper.drop_train})
                         train_writer.add_summary(summ, k)
-                        print("train acc: " + str(acc_train))
+                        logger.info("train acc: " + str(acc_train))
 
                         if acc_train >= 0.5:
                             counter_stop += 1
-                            if counter_stop >= 1:
-                                print('Done :)')
-                                sys.exit()
+                            logger.info("Counter stop: {}".format(counter_stop))
+                            # if counter_stop >= 1:
+                            #     logger.info('Done :)')
+                            #     sys.exit()
                         else:
                             counter_stop = 0
 
@@ -219,7 +223,7 @@ def train(opt):
                         summ, acc_val = sess.run([merged, accuracy], feed_dict={handle: validation_handle,
                                                                                 dropout_rate: opt.hyper.drop_test})
                         val_writer.add_summary(summ, k)
-                        print("val acc: " + str(acc_val))
+                        logger.info("val acc: " + str(acc_val))
                         sys.stdout.flush()
 
                     else:
@@ -228,7 +232,7 @@ def train(opt):
                                                           dropout_rate: opt.hyper.drop_train})
 
                 sess.run([inc_global_step])
-                print("----------------")
+                logger.info("----------------")
                 sys.stdout.flush()
                 ################################################################################################
 
@@ -256,7 +260,7 @@ def train(opt):
                 acc_tmp += acc_val[0]
 
             val_acc = acc_tmp / float(15)
-            print("Full train acc = " + str(val_acc))
+            logger.info("Full train acc = " + str(val_acc))
             sys.stdout.flush()
 
             # Run one pass over a batch of the validation dataset.
@@ -268,7 +272,7 @@ def train(opt):
                 acc_tmp += acc_val[0]
 
             val_acc = acc_tmp / float(15)
-            print("Full val acc = " + str(val_acc))
+            logger.info("Full val acc = " + str(val_acc))
             sys.stdout.flush()
 
             # Run one pass over a batch of the test dataset.
@@ -280,18 +284,26 @@ def train(opt):
                 acc_tmp += acc_val[0]
 
             val_acc = acc_tmp / float(int(dataset.num_images_test / opt.hyper.batch_size))
-            print("Full test acc: " + str(val_acc))
+            logger.info("Full test acc: " + str(val_acc))
             sys.stdout.flush()
 
-            print(":)")
+            logger.info(":)")
 
         else:
-            print("MODEL WAS NOT TRAINED")
+            logger.info("MODEL WAS NOT TRAINED")
 
 
 if __name__ == '__main__':
+    logger.handlers = []
+    logger.setLevel(logging.DEBUG)
+    ch = logging.StreamHandler(stream=sys.stdout)
+    ch.setLevel(logging.DEBUG)
+    ch.setFormatter(logging.Formatter('%(asctime)s %(name)s:%(levelname)s:%(message)s'))
+    logger.addHandler(ch)
+
     opt = Experiment()
     # env = gym.make('Breakout-v0')
     # opt.ob_space = env.observation_space.shape
     opt.ob_space = (210, 160, 3)
+    logger.info("Running with: {}".format(opt))
     train(opt)
