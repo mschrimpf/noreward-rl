@@ -1,4 +1,4 @@
-## Unsupervised pre-training in Atari ##
+## Unsupervised pre-training in Reinforcement Learning ##
 
 <img src="images/vizdoom.gif" width="351">
 
