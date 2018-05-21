@@ -49,6 +49,8 @@ def run(args, server):
     saver = FastSaver(variables_to_save)
     if args.pretrain is not None:
         variables_to_restore = [v for v in tf.trainable_variables() if not v.name.startswith("local")]
+        if 'cifar' in args.pretrain or 'ID0_base' in args.pretrain:
+            variables_to_restore = [v for v in variables_to_restore if v.name.startswith('global/l')]
         pretrain_saver = FastSaver(variables_to_restore)
 
     var_list = tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, tf.get_variable_scope().name)
@@ -64,7 +66,8 @@ def run(args, server):
             logger.info("==> Restoring from given pretrained checkpoint.")
             logger.info("    Pretraining address: %s", pretrain)
             pretrain_saver.restore(ses, pretrain)
-            logger.info("==> Done restoring model! Restored %d variables.", len(variables_to_restore))
+            logger.info("==> Done restoring model! Restored %d variables: %s",
+                        len(variables_to_restore), ", ".join(var.name for var in variables_to_restore))
 
     config = tf.ConfigProto(device_filters=["/job:ps", "/job:worker/task:{}/cpu:0".format(args.task)])
     logdir = os.path.join(args.log_dir, 'train')
@@ -101,6 +104,7 @@ def run(args, server):
         global_step = sess.run(trainer.global_step)
         logger.info("Starting training at gobal_step=%d", global_step)
         while not sv.should_stop() and (not num_global_steps or global_step < num_global_steps):
+            # print("Global step {}/{}, lr={}".format(global_step, num_global_steps, sess.run(trainer.opt._lr)))
             print("Global step {}/{}".format(global_step, num_global_steps))
             trainer.process(sess)
             global_step = sess.run(trainer.global_step)
