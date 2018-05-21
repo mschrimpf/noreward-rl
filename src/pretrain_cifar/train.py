@@ -32,7 +32,8 @@ def train(opt):
     dataset = Cifar10(opt)
 
     # Repeatable datasets for training
-    train_dataset = dataset.create_dataset(augmentation=opt.hyper.augmentation, standarization=True, set_name='train',
+    train_dataset = dataset.create_dataset(augmentation=opt.hyper['augmentation'], standarization=True,
+                                           set_name='train',
                                            repeat=True)
     val_dataset = dataset.create_dataset(augmentation=False, standarization=True, set_name='val', repeat=True)
 
@@ -67,19 +68,20 @@ def train(opt):
     # Call DNN
     dropout_rate = tf.placeholder(tf.float32)
 
-    y = model_ctr(image)
+    with tf.variable_scope("global"):
+        y = model_ctr(image)
     # add linear readout
     # We don't apply softmax here because
     # tf.nn.sparse_softmax_cross_entropy_with_logits accepts the unscaled logits
     # and performs the softmax internally for efficiency.
-    num_outs = len(dataset.list_labels)
+    num_outs = len(dataset.list_labels) * 4
     y = tf.layers.dense(y, units=num_outs, activation=None)
     # parameters = list(y.trainable_variables())
 
     # Loss function
     with tf.name_scope('loss'):
         # weights_norm = tf.reduce_sum(
-        #     input_tensor=opt.hyper.weight_decay * tf.stack(
+        #     input_tensor=opt.hyper['weight_decay'] * tf.stack(
         #         [tf.nn.l2_loss(i) for i in parameters]
         #     ),
         #     name='weights_norm')
@@ -101,15 +103,15 @@ def train(opt):
     ################################################################################################
 
     # Learning rate
-    num_batches_per_epoch = dataset.num_images_epoch / opt.hyper.batch_size
-    decay_steps = int(opt.hyper.num_epochs_per_decay)
-    lr = tf.train.exponential_decay(opt.hyper.learning_rate,
+    num_batches_per_epoch = dataset.num_images_epoch / opt.hyper['batch_size']
+    decay_steps = int(opt.hyper['num_epochs_per_decay'])
+    lr = tf.train.exponential_decay(opt.hyper['learning_rate'],
                                     global_step,
                                     decay_steps,
-                                    opt.hyper.learning_rate_factor_per_decay,
+                                    opt.hyper['learning_rate_factor_per_decay'],
                                     staircase=True)
     tf.summary.scalar('learning_rate', lr)
-    tf.summary.scalar('weight_decay', opt.hyper.weight_decay)
+    tf.summary.scalar('weight_decay', opt.hyper['weight_decay'])
 
     # Accuracy
     with tf.name_scope('accuracy'):
@@ -126,8 +128,8 @@ def train(opt):
         ################################################################################################
         all_var = tf.trainable_variables()
 
-        train_step = tf.train.MomentumOptimizer(learning_rate=lr, momentum=opt.hyper.momentum).minimize(total_loss,
-                                                                                                        var_list=all_var)
+        train_step = tf.train.MomentumOptimizer(learning_rate=lr, momentum=opt.hyper['momentum']).minimize(total_loss,
+                                                                                                           var_list=all_var)
         inc_global_step = tf.assign_add(global_step, 1, name='increment')
 
         raw_grads = tf.gradients(total_loss, all_var)
@@ -141,7 +143,7 @@ def train(opt):
         # Set up checkpoints and data
         ################################################################################################
 
-        saver = tf.train.Saver(max_to_keep=opt.max_to_keep_checkpoints)
+        saver = tf.train.Saver(max_to_keep=opt.max_to_keep_checkpoints, save_relative_paths=True)
 
         # Automatic restore model, or force train from scratch
         flag_testable = False
@@ -182,22 +184,22 @@ def train(opt):
             # Loop alternating between training and validation.
             ################################################################################################
             counter_stop = 0
-            for iEpoch in range(int(sess.run(global_step)), opt.hyper.max_num_epochs):
+            for iEpoch in range(int(sess.run(global_step)), opt.hyper['max_num_epochs']):
 
                 # Save metadata every epoch
                 run_options = tf.RunOptions(trace_level=tf.RunOptions.FULL_TRACE)
                 run_metadata = tf.RunMetadata()
                 summ = sess.run([merged], feed_dict={handle: training_handle,
-                                                     dropout_rate: opt.hyper.drop_train},
+                                                     dropout_rate: opt.hyper['drop_train']},
                                 options=run_options, run_metadata=run_metadata)
                 train_writer.add_run_metadata(run_metadata, 'epoch%03d' % iEpoch)
                 saver.save(sess, opt.log_dir_base + opt.name + '/models/model', global_step=iEpoch)
 
                 # Steps for doing one epoch
-                for iStep in range(int(dataset.num_images_epoch / opt.hyper.batch_size)):
+                for iStep in range(int(dataset.num_images_epoch / opt.hyper['batch_size'])):
 
                     # Epoch counter
-                    k = iStep * opt.hyper.batch_size + dataset.num_images_epoch * iEpoch
+                    k = iStep * opt.hyper['batch_size'] + dataset.num_images_epoch * iEpoch
 
                     # Print accuray and summaries + train steps
                     if iStep == 0:
@@ -205,23 +207,22 @@ def train(opt):
                         logger.info("* epoch: {}".format(float(k) / float(dataset.num_images_epoch)))
                         summ, acc_train = sess.run([merged, accuracy],
                                                    feed_dict={handle: training_handle,
-                                                              dropout_rate: opt.hyper.drop_train})
+                                                              dropout_rate: opt.hyper['drop_train']})
                         train_writer.add_summary(summ, k)
                         logger.info("train acc: {}".format(acc_train))
 
-                        if acc_train >= 0.5:
+                        if acc_train >= 0.95:
                             counter_stop += 1
                             logger.info("Counter stop: {}".format(counter_stop))
-                            # if counter_stop >= 1:
-                            #     logger.info('Done :)')
-                            #     sys.exit()
+                            logger.info('Done :)')
+                            sys.exit()
                         else:
                             counter_stop = 0
 
                         sys.stdout.flush()
 
                         summ, acc_val = sess.run([merged, accuracy], feed_dict={handle: validation_handle,
-                                                                                dropout_rate: opt.hyper.drop_test})
+                                                                                dropout_rate: opt.hyper['drop_test']})
                         val_writer.add_summary(summ, k)
                         logger.info("val acc: {}".format(acc_val))
                         sys.stdout.flush()
@@ -229,7 +230,7 @@ def train(opt):
                     else:
 
                         sess.run([train_step], feed_dict={handle: training_handle,
-                                                          dropout_rate: opt.hyper.drop_train})
+                                                          dropout_rate: opt.hyper['drop_train']})
 
                 sess.run([inc_global_step])
                 logger.info("----------------")
@@ -256,7 +257,7 @@ def train(opt):
             acc_tmp = 0.0
             for num_iter in range(15):
                 acc_val = sess.run([accuracy], feed_dict={handle: train_handle_full,
-                                                          dropout_rate: opt.hyper.drop_test})
+                                                          dropout_rate: opt.hyper['drop_test']})
                 acc_tmp += acc_val[0]
 
             val_acc = acc_tmp / float(15)
@@ -268,7 +269,7 @@ def train(opt):
             acc_tmp = 0.0
             for num_iter in range(15):
                 acc_val = sess.run([accuracy], feed_dict={handle: validation_handle_full,
-                                                          dropout_rate: opt.hyper.drop_test})
+                                                          dropout_rate: opt.hyper['drop_test']})
                 acc_tmp += acc_val[0]
 
             val_acc = acc_tmp / float(15)
@@ -278,12 +279,12 @@ def train(opt):
             # Run one pass over a batch of the test dataset.
             sess.run(test_iterator_full.initializer)
             acc_tmp = 0.0
-            for num_iter in range(int(dataset.num_images_test / opt.hyper.batch_size)):
+            for num_iter in range(int(dataset.num_images_test / opt.hyper['batch_size'])):
                 acc_val = sess.run([accuracy], feed_dict={handle: test_handle_full,
-                                                          dropout_rate: opt.hyper.drop_test})
+                                                          dropout_rate: opt.hyper['drop_test']})
                 acc_tmp += acc_val[0]
 
-            val_acc = acc_tmp / float(int(dataset.num_images_test / opt.hyper.batch_size))
+            val_acc = acc_tmp / float(int(dataset.num_images_test / opt.hyper['batch_size']))
             logger.info("Full test acc: {}".format(val_acc))
             sys.stdout.flush()
 
@@ -294,16 +295,23 @@ def train(opt):
 
 
 if __name__ == '__main__':
-    logger.handlers = []
     logger.setLevel(logging.DEBUG)
     ch = logging.StreamHandler(stream=sys.stdout)
     ch.setLevel(logging.DEBUG)
     ch.setFormatter(logging.Formatter('%(asctime)s %(name)s:%(levelname)s:%(message)s'))
+    logger.handlers = []
     logger.addHandler(ch)
 
     opt = Experiment()
-    # env = gym.make('Breakout-v0')
+    print(opt)
+    # env = gym.make('Breakout-v0')  # or Pong-v0, same observation space shape
     # opt.ob_space = env.observation_space.shape
-    opt.ob_space = (210, 160, 3)
+    # opt.ob_space = (210, 160, 3)  # Breakout-v0, Pong-v0
+    # opt.ob_space = (480, 640, 3)  # doom
+    # opt.ob_space = (42, 42, 3)  # PongDeterministic-v3
+    # opt.ob_space = (42, 42, 4)  # doom envWrap
+    # opt.dataset['n_channels'] = 4
+    opt.ob_space = (42, 42, 1)  # PongDeterministic-v3 envWrap
+    opt.dataset['n_channels'] = 1
     logger.info("Running with: {}".format(opt))
     train(opt)
