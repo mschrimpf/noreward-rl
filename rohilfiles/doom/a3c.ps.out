@@ -1,0 +1,53 @@
+[2018-05-01 20:39:25,677] Writing logs to file: /tmp/universe-22519.log
+I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:197] Initialize GrpcChannelCache for job ps -> {0 -> localhost:12222}
+I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:197] Initialize GrpcChannelCache for job worker -> {0 -> 127.0.0.1:12223, 1 -> 127.0.0.1:12224, 2 -> 127.0.0.1:12225, 3 -> 127.0.0.1:12226, 4 -> 127.0.0.1:12227, 5 -> 127.0.0.1:12228, 6 -> 127.0.0.1:12229, 7 -> 127.0.0.1:12230, 8 -> 127.0.0.1:12231, 9 -> 127.0.0.1:12232, 10 -> 127.0.0.1:12233, 11 -> 127.0.0.1:12234, 12 -> 127.0.0.1:12235, 13 -> 127.0.0.1:12236, 14 -> 127.0.0.1:12237, 15 -> 127.0.0.1:12238, 16 -> 127.0.0.1:12239, 17 -> 127.0.0.1:12240, 18 -> 127.0.0.1:12241, 19 -> 127.0.0.1:12242}
+I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:211] Started server with target: grpc://localhost:12222
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l4/W/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l4/W not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l3/W/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l2/b/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l3/W/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l4/W/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l4/b/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l2/b not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l4/b/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l2/W/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l3/b/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l2/W/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/glast/w/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l4/b not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l3/b/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l1/b/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l3/W not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l1/b not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l3/b not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l2/W not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/glast/b not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/glast/w not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l2/b/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l1/b/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/f1/b/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/g1/b/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/g1/b not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/flast/w/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/glast/b/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l1/W not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l1/W/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/flast/b/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/glast/w/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/g1/w not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/l1/W/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/glast/b/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/f1/w/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/f1/w/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/flast/w/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/g1/b/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/f1/b not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/flast/b/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/g1/w/Adam not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/g1/w/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/f1/w not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/f1/b/Adam_1 not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/flast/b not found in checkpoint
+W tensorflow/core/framework/op_kernel.cc:975] Not found: Key global/predictor/flast/w not found in checkpoint
+[2018-05-02 00:36:38,410] Received signal 15: exiting

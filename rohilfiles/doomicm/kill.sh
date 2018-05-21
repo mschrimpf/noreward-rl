@@ -1,0 +1,23 @@
+#!/bin/sh
+kill 10028
+kill 10029
+kill 10030
+kill 10031
+kill 10032
+kill 10033
+kill 10034
+kill 10035
+kill 10036
+kill 10037
+kill 10038
+kill 10039
+kill 10040
+kill 10041
+kill 10042
+kill 10043
+kill 10044
+kill 10045
+kill 10046
+kill 10047
+kill 10048
+kill 10049

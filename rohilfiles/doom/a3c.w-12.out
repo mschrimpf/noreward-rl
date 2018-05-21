@@ -1,0 +1,1032 @@
+[2018-05-01 20:39:25,551] Writing logs to file: /tmp/universe-22532.log
+I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:197] Initialize GrpcChannelCache for job ps -> {0 -> 127.0.0.1:12222}
+I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:197] Initialize GrpcChannelCache for job worker -> {0 -> 127.0.0.1:12223, 1 -> 127.0.0.1:12224, 2 -> 127.0.0.1:12225, 3 -> 127.0.0.1:12226, 4 -> 127.0.0.1:12227, 5 -> 127.0.0.1:12228, 6 -> 127.0.0.1:12229, 7 -> 127.0.0.1:12230, 8 -> 127.0.0.1:12231, 9 -> 127.0.0.1:12232, 10 -> 127.0.0.1:12233, 11 -> 127.0.0.1:12234, 12 -> localhost:12235, 13 -> 127.0.0.1:12236, 14 -> 127.0.0.1:12237, 15 -> 127.0.0.1:12238, 16 -> 127.0.0.1:12239, 17 -> 127.0.0.1:12240, 18 -> 127.0.0.1:12241, 19 -> 127.0.0.1:12242}
+I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:211] Started server with target: grpc://localhost:12235
+[2018-05-01 20:41:25,676] Making new env: ppaquette/DoomMyWayHome-v0
+[2018-05-01 20:41:28,893] Trainable vars:
+[2018-05-01 20:41:28,894]   global/l1/W:0 (3, 3, 4, 32)
+[2018-05-01 20:41:28,894]   global/l1/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,894]   global/l2/W:0 (3, 3, 32, 32)
+[2018-05-01 20:41:28,894]   global/l2/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,894]   global/l3/W:0 (3, 3, 32, 32)
+[2018-05-01 20:41:28,895]   global/l3/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,895]   global/l4/W:0 (3, 3, 32, 32)
+[2018-05-01 20:41:28,895]   global/l4/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,895]   global/RNN/BasicLSTMCell/Linear/Matrix:0 (544, 1024)
+[2018-05-01 20:41:28,895]   global/RNN/BasicLSTMCell/Linear/Bias:0 (1024,)
+[2018-05-01 20:41:28,895]   global/value/w:0 (256, 1)
+[2018-05-01 20:41:28,895]   global/value/b:0 (1,)
+[2018-05-01 20:41:28,895]   global/action/w:0 (256, 4)
+[2018-05-01 20:41:28,895]   global/action/b:0 (4,)
+[2018-05-01 20:41:28,896]   global/predictor/l1/W:0 (3, 3, 4, 32)
+[2018-05-01 20:41:28,896]   global/predictor/l1/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,896]   global/predictor/l2/W:0 (3, 3, 32, 32)
+[2018-05-01 20:41:28,896]   global/predictor/l2/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,896]   global/predictor/l3/W:0 (3, 3, 32, 32)
+[2018-05-01 20:41:28,896]   global/predictor/l3/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,896]   global/predictor/l4/W:0 (3, 3, 32, 32)
+[2018-05-01 20:41:28,896]   global/predictor/l4/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,896]   global/predictor/g1/w:0 (576, 256)
+[2018-05-01 20:41:28,897]   global/predictor/g1/b:0 (256,)
+[2018-05-01 20:41:28,897]   global/predictor/glast/w:0 (256, 4)
+[2018-05-01 20:41:28,897]   global/predictor/glast/b:0 (4,)
+[2018-05-01 20:41:28,897]   global/predictor/f1/w:0 (292, 256)
+[2018-05-01 20:41:28,897]   global/predictor/f1/b:0 (256,)
+[2018-05-01 20:41:28,897]   global/predictor/flast/w:0 (256, 288)
+[2018-05-01 20:41:28,897]   global/predictor/flast/b:0 (288,)
+[2018-05-01 20:41:28,897]   local/l1/W:0 (3, 3, 4, 32)
+[2018-05-01 20:41:28,897]   local/l1/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,898]   local/l2/W:0 (3, 3, 32, 32)
+[2018-05-01 20:41:28,898]   local/l2/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,898]   local/l3/W:0 (3, 3, 32, 32)
+[2018-05-01 20:41:28,898]   local/l3/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,898]   local/l4/W:0 (3, 3, 32, 32)
+[2018-05-01 20:41:28,898]   local/l4/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,898]   local/RNN/BasicLSTMCell/Linear/Matrix:0 (544, 1024)
+[2018-05-01 20:41:28,898]   local/RNN/BasicLSTMCell/Linear/Bias:0 (1024,)
+[2018-05-01 20:41:28,898]   local/value/w:0 (256, 1)
+[2018-05-01 20:41:28,899]   local/value/b:0 (1,)
+[2018-05-01 20:41:28,899]   local/action/w:0 (256, 4)
+[2018-05-01 20:41:28,899]   local/action/b:0 (4,)
+[2018-05-01 20:41:28,899]   local/predictor/l1/W:0 (3, 3, 4, 32)
+[2018-05-01 20:41:28,899]   local/predictor/l1/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,899]   local/predictor/l2/W:0 (3, 3, 32, 32)
+[2018-05-01 20:41:28,899]   local/predictor/l2/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,899]   local/predictor/l3/W:0 (3, 3, 32, 32)
+[2018-05-01 20:41:28,899]   local/predictor/l3/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,899]   local/predictor/l4/W:0 (3, 3, 32, 32)
+[2018-05-01 20:41:28,900]   local/predictor/l4/b:0 (1, 1, 1, 32)
+[2018-05-01 20:41:28,900]   local/predictor/g1/w:0 (576, 256)
+[2018-05-01 20:41:28,900]   local/predictor/g1/b:0 (256,)
+[2018-05-01 20:41:28,900]   local/predictor/glast/w:0 (256, 4)
+[2018-05-01 20:41:28,900]   local/predictor/glast/b:0 (4,)
+[2018-05-01 20:41:28,900]   local/predictor/f1/w:0 (292, 256)
+[2018-05-01 20:41:28,900]   local/predictor/f1/b:0 (256,)
+[2018-05-01 20:41:28,900]   local/predictor/flast/w:0 (256, 288)
+[2018-05-01 20:41:28,900]   local/predictor/flast/b:0 (288,)
+[2018-05-01 20:41:28,901] Events directory: tmp/doom/train_12
+[2018-05-01 20:41:30,530] Starting session. If this hangs, we're mostly likely waiting to connect to the parameter server. One common cause is that the parameter server DNS name isn't resolving yet, or is misspecified.
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 3558482f99bf35bb with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session f3c870f053be8efd with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 2eeb14c2f8b08654 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session e7bf9e154973adff with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 121d935df6ee4b61 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 913faa1ef604558a with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 9c198be923930335 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 696a647cfaa4f075 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ebbf62f6028c7e01 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session bae4313ea660d9b0 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ddb8b07ee81a646f with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session e659f65d81aa7598 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 8656ce261be1cea4 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session bb1aab0156a281e0 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session e52d8a9fb46b9bda with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ee571307ee23da4f with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 9463ff906e789e19 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ce3405fcd979479f with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session da2a4741b72021d1 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 897a887f536dc0c3 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session c7cfcdfb20230b60 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 8462d0ddb39fbf98 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 1d194451e812cf06 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 42b28830db9f2ceb with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session b5b1bb79c50c7b5a with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 57ec7c3241dfbe3e with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session e522faa4a407e65a with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 6a28e37094620bb4 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 5a2c4887f77d3944 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 873e5189db38c23c with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 291041895a0351fc with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 50bf52008efb63d7 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 71cf0df4f29cb3ef with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 2da9477be2495741 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 6f53780b25eb6106 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 79b7c1c099cd713b with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ffeabac755b165fb with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 6ad7c7f612e53f92 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 42ab8c9c6707fc04 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 1ece8c4441aba5a1 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session eea236ba18b7a8ec with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session d7aa58b78d71311e with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 975be335866c3246 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 86cd0a77604df481 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session c2207a02cce751ed with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session f546c81144b532be with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 737335b04327a34f with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 1fb44a4763cfd952 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 417e3f1384db3b40 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session c0306d8a01cd2f4e with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 3f319c397eb02092 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 05a3318b973b5bab with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 566c888a90b77b29 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 5a692309bfb82f7a with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session e856c0e06350d865 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 9c3c4e634e03f9a1 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 3e899e5cdbb0abac with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session c37f45a22ebd9019 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 35267344f0c28fad with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session f4722f41b42cd8c4 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 27cf25952839a75c with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 58971c94552dd478 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 5a6871e65cd3544a with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session f0c628de303cbd00 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 523ca0b2f8859636 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session f07557ce96f51cc0 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 5624ab737c756092 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 52f4c322422cd8f9 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 10c91d73ba44294f with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 19e5f419f6a05f07 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 7f01edad158680b9 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 0d10d78eb4e2acfc with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 434781abba6e087d with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session bd117f6e1cc2aec0 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 888b155e9c77c6f3 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ea8762aae9615705 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ba3136105677e91e with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 75703368a70e7e0c with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 4ff12cbf3d7f08bf with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session df3a8fd6add5ab00 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 0ce37963b7ac205d with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 6ba022e861db2e0f with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 4fbaf3b960ce04eb with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 0cb8f2720038758c with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 250c6e9a58b647a8 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 05ce0447be3b662c with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 3b620c001a0a6444 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 068ce4811b040ebc with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 654efd062ef76a61 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session a8892d86b2f97480 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 7ff018a89c358df2 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session e818ef129da8f847 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session a0fbaa59c0000660 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 5fa0dab0b3875b7b with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 0f9cad1555cf5c3f with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session d66a9fb7216664b5 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session f00f46cd671a1619 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 1538c41c80ae5042 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session c6c6ba040b91ef43 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 76b45262c95a3fef with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 863a5b6d598bc885 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ad5b9015b7f97586 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session f87ac2150e8e3e5a with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 2e4e139d03f7c3c7 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session b03b7a6a0598508c with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 383891faa4b90a29 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ad6014b373d9aa23 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session a9cc6386cbaf2f62 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 28fc47a1051a7016 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session e0fc4bf674e2ee6b with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session f1c9fdd12020db66 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 3674ba5bd0dd91fd with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session a3e34fa25cafd931 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 978731d347f8de6e with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session f0c0007e80ed9254 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 254f58a7d781dea0 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session d844b9403a0b0139 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 17effcdc2a23f0e1 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 80ddae71b17fb605 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 890188453b2a52d7 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 6752ed0d8892e207 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ccd4f2e3a4bffb5e with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 4f232a3474bc70ab with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 781955c9b6dfac35 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ad348fac560b8a3c with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 9b8fad63690843ac with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ba8f401722b07c9f with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 41a8392d84e4ae35 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session a50b04a499bbbe70 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session b94acb8940caaef6 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 4b663b78ee83ca34 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session bd706120ba7123e6 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 1a5845b108ac39f1 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 53b93cdc0ef81536 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 53178df45ca33b0b with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session a161646e2f31269b with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 908d65b8a2aeff8a with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session f260fff8b52480bf with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 27f7bba3bc8e8156 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 937cfbde1eb7bc09 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 53ba05ed04666454 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session e79d20220d32bb87 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 3f5b9e3eaefca6e7 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 36b9fcc3aec541e7 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session f0aa1a2dcb6e06f5 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 5f29b3bd80205bd2 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session c35bdd06adb66d12 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session eb11b88a88ffab88 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 3a39d13a7748fcfa with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 40ed7cfc8ea763b2 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session bde28639c73a6b82 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session eb2e965a7150f744 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 7fbdd2a8e818bf03 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session b9f8d49c89905ccb with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 14f8d2b5a535b96a with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session c3da327b3a61c987 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session a044212044174779 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 72aa63d66b31101b with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 9488af66f0568ae2 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 73452955a1746030 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 9fd4832a219c89f7 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session a7d129e319e89919 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 04ff56400d285738 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session a6a8cff20fc9b11a with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 78380058d0a2f198 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session dec4ead853279d99 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session e6766de0f47b3959 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 1428a8b928fbac57 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 5397f7a7a742b2b5 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session cd44ac44c13d91ba with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 81f7e22e473410e5 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session b64f8963eda3b107 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session c02f490883f095c5 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session b35d8d59a95f4d3c with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 635ef579ece35fed with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ef46b040fa7a4dc0 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 3b830f4d7fb61624 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session e09d7c2fdf2496c2 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session c8163a3a561eca16 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 191a13c97f37e7d7 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 0ecf360ac8041cd9 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 34cb355faeabe1ec with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 33eb8d58a3a07a38 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session f92745d8f4a52edc with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 0467338021baa637 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 27316d7b3172ebc5 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 1f546e2347d54d67 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 39eace958ca4a399 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session a36d2604f3f22a87 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 685e690e08a5357f with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session a11d4541be2f060d with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 4d7cdfa6eb844146 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 9d6f0b46758ce746 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session cab4c3e262e76503 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session c48c1bee42d6486e with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 652f0f806f20f3f8 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ce43c39f4d7b5d62 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session aebc4fc59a67bb31 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 25ed3af2952af9a8 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 130ac3a771eb2c0e with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 712dac204d121096 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session c3170543ef86ed10 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 57610dd61aa4647b with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 7ae4006041d9d52b with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 13a676f30ec4c4b4 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session c6351a44d9628bfb with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session dd1ad8145b831eb3 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 02776fc18858f32a with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 93a1db3f78a5d327 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 3d687a4f2694ced6 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 83b5a4e71bf64d13 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 9e39c41e5771b230 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 0eba81fb300dc81f with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 0ab437d6900e0d09 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ae7a571a39f1397d with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 3f2685ffebe3d628 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session f8e7904efe2ee33f with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 43b376dc8b580c2e with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 5126f8cef86d6863 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 688a21559d6a53a1 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 046b0565f2fb2f78 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session aa50f46e5c2abb33 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session d76d4cdec2534458 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 5c96da7bc434f472 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 72ae4f295285a8ec with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 0f9f7187fae31a47 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 04649be3f4f0b42f with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session f974c5d5256dc9e2 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 6b2bbb9bdba78373 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 13afa6af68017a1e with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session ded4d8fcb27ec44b with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 042a3f8d54ecbc6c with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session bc84bb65978a4884 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:12/cpu:0"
+
+Using universe head design
+Using universe head design
+Using universe head design
+Using universe head design
+Using universe head design
+Using universe head design
+Optimizer: ADAM with lr: 0.000100
+Input observation shape:  (42, 42, 4)
+Traceback (most recent call last):
+  File "worker.py", line 188, in <module>
+    tf.app.run()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/platform/app.py", line 43, in run
+    sys.exit(main(sys.argv[:1] + flags_passthrough))
+  File "worker.py", line 180, in main
+    run(args, server)
+  File "worker.py", line 95, in run
+    with sv.managed_session(server.target, config=config) as sess, sess.as_default():
+  File "/usr/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/supervisor.py", line 974, in managed_session
+    self.stop(close_summary_writer=close_summary_writer)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/supervisor.py", line 802, in stop
+    stop_grace_period_secs=self._stop_grace_secs)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/coordinator.py", line 386, in join
+    six.reraise(*self._exc_info_to_raise)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/supervisor.py", line 963, in managed_session
+    start_standard_services=start_standard_services)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/supervisor.py", line 727, in prepare_or_wait_for_session
+    max_wait_secs=max_wait_secs)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/session_manager.py", line 361, in wait_for_session
+    "Session was not ready after waiting %d secs." % (max_wait_secs,))
+tensorflow.python.framework.errors_impl.DeadlineExceededError: Session was not ready after waiting 7200 secs.

@@ -1,0 +1,9 @@
+WARNING:tensorflow:Found more than one graph event per run, or there was a metagraph containing a graph_def, as well as one or more graph events.  Overwriting the graph with the newest event.
+WARNING:tensorflow:Found more than one metagraph event per run. Overwriting the metagraph with the newest event.
+WARNING:tensorflow:Detected out of order event.step likely caused by a TensorFlow restart. Purging expired events from Tensorboard display between the previous step: -1 (timestamp: -1) and current step: 10903388 (timestamp: 1525207046.25). Removing 21 scalars, 0 histograms, 0 compressed histograms, 3 images, and 0 audio.
+WARNING:tensorflow:Found more than one graph event per run, or there was a metagraph containing a graph_def, as well as one or more graph events.  Overwriting the graph with the newest event.
+WARNING:tensorflow:Found more than one metagraph event per run. Overwriting the metagraph with the newest event.
+WARNING:tensorflow:Detected out of order event.step likely caused by a TensorFlow restart. Purging expired events from Tensorboard display between the previous step: -1 (timestamp: -1) and current step: 10903388 (timestamp: 1525207060.5). Removing 8 scalars, 0 histograms, 0 compressed histograms, 3 images, and 0 audio.
+WARNING:tensorflow:Found more than one graph event per run, or there was a metagraph containing a graph_def, as well as one or more graph events.  Overwriting the graph with the newest event.
+WARNING:tensorflow:Found more than one metagraph event per run. Overwriting the metagraph with the newest event.
+WARNING:tensorflow:Detected out of order event.step likely caused by a TensorFlow restart. Purging expired events from Tensorboard display between the previous step: -1 (timestamp: -1) and current step: 10903388 (timestamp: 1525207116.39). Removing 70 scalars, 0 histograms, 0 compressed histograms, 3 images, and 0 audio.
