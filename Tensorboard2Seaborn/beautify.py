@@ -27,7 +27,7 @@ def plot(params):
   y_raw = []
 
   for worker in all_workers:
-    print('hi')
+    print(worker)
     acc = ea.EventAccumulator(worker)
     acc.Reload()
 
@@ -51,16 +51,22 @@ def plot(params):
       x_smooth.append(x_raw[i])
       y_smooth.append(sum(y_raw[i:]) / float(len(x_raw) - i))    
 
+  x_raw = [x*1e-6 for x in x_raw]
+  x_smooth = [x*1e-6 for x in x_smooth]
   plt.figure()
   plt.subplot(111)
   plt.title(params['title'], fontsize=16)  
   plt.plot(x_raw, y_raw, color=colors.to_rgba(color_code, alpha=0.4))
   plt.plot(x_smooth, y_smooth, color=color_code, linewidth=1.5)
-  plt.xlabel('Number of Training Steps', fontsize=14)
+  plt.xlabel('Number of Global Training Steps (in millions)', fontsize=14)
   plt.ylabel('Intrinsic Reward' if params['intrinsic'] else 'Episode Reward', fontsize=14)
   plt.xticks(fontsize=12)
   plt.yticks(fontsize=12)
+  #plt.ticklabel_format(style='sci', axis='x', scilimits=(0,0))
+  plt.gca().xaxis.offsetText.set_fontsize(12)
   plt.savefig(params['filename'])
+
+
   plt.show()
 
 
