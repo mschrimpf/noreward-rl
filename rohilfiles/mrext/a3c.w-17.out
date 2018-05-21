@@ -1,0 +1,89 @@
+[2018-05-20 23:35:20,283] Writing logs to file: /tmp/universe-25387.log
+I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:197] Initialize GrpcChannelCache for job ps -> {0 -> 127.0.0.1:12222}
+I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:197] Initialize GrpcChannelCache for job worker -> {0 -> 127.0.0.1:12223, 1 -> 127.0.0.1:12224, 2 -> 127.0.0.1:12225, 3 -> 127.0.0.1:12226, 4 -> 127.0.0.1:12227, 5 -> 127.0.0.1:12228, 6 -> 127.0.0.1:12229, 7 -> 127.0.0.1:12230, 8 -> 127.0.0.1:12231, 9 -> 127.0.0.1:12232, 10 -> 127.0.0.1:12233, 11 -> 127.0.0.1:12234, 12 -> 127.0.0.1:12235, 13 -> 127.0.0.1:12236, 14 -> 127.0.0.1:12237, 15 -> 127.0.0.1:12238, 16 -> 127.0.0.1:12239, 17 -> localhost:12240, 18 -> 127.0.0.1:12241, 19 -> 127.0.0.1:12242}
+I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:211] Started server with target: grpc://localhost:12240
+[2018-05-20 23:35:20,303] Making new env: MontezumaRevenge-v0
+Using universe head design
+Using universe head design
+Optimizer: ADAM with lr: 0.000100
+Input observation shape:  (42, 42, 1)
+[2018-05-20 23:35:22,358] Trainable vars:
+[2018-05-20 23:35:22,358]   global/l1/W:0 (3, 3, 1, 32)
+[2018-05-20 23:35:22,358]   global/l1/b:0 (1, 1, 1, 32)
+[2018-05-20 23:35:22,358]   global/l2/W:0 (3, 3, 32, 32)
+[2018-05-20 23:35:22,358]   global/l2/b:0 (1, 1, 1, 32)
+[2018-05-20 23:35:22,358]   global/l3/W:0 (3, 3, 32, 32)
+[2018-05-20 23:35:22,358]   global/l3/b:0 (1, 1, 1, 32)
+[2018-05-20 23:35:22,358]   global/l4/W:0 (3, 3, 32, 32)
+[2018-05-20 23:35:22,358]   global/l4/b:0 (1, 1, 1, 32)
+[2018-05-20 23:35:22,359]   global/RNN/BasicLSTMCell/Linear/Matrix:0 (544, 1024)
+[2018-05-20 23:35:22,359]   global/RNN/BasicLSTMCell/Linear/Bias:0 (1024,)
+[2018-05-20 23:35:22,359]   global/value/w:0 (256, 1)
+[2018-05-20 23:35:22,359]   global/value/b:0 (1,)
+[2018-05-20 23:35:22,359]   global/action/w:0 (256, 18)
+[2018-05-20 23:35:22,359]   global/action/b:0 (18,)
+[2018-05-20 23:35:22,359]   local/l1/W:0 (3, 3, 1, 32)
+[2018-05-20 23:35:22,359]   local/l1/b:0 (1, 1, 1, 32)
+[2018-05-20 23:35:22,359]   local/l2/W:0 (3, 3, 32, 32)
+[2018-05-20 23:35:22,359]   local/l2/b:0 (1, 1, 1, 32)
+[2018-05-20 23:35:22,359]   local/l3/W:0 (3, 3, 32, 32)
+[2018-05-20 23:35:22,359]   local/l3/b:0 (1, 1, 1, 32)
+[2018-05-20 23:35:22,359]   local/l4/W:0 (3, 3, 32, 32)
+[2018-05-20 23:35:22,359]   local/l4/b:0 (1, 1, 1, 32)
+[2018-05-20 23:35:22,360]   local/RNN/BasicLSTMCell/Linear/Matrix:0 (544, 1024)
+[2018-05-20 23:35:22,360]   local/RNN/BasicLSTMCell/Linear/Bias:0 (1024,)
+[2018-05-20 23:35:22,360]   local/value/w:0 (256, 1)
+[2018-05-20 23:35:22,360]   local/value/b:0 (1,)
+[2018-05-20 23:35:22,360]   local/action/w:0 (256, 18)
+[2018-05-20 23:35:22,360]   local/action/b:0 (18,)
+[2018-05-20 23:35:22,361] Events directory: /scratch/mrext/train_17
+[2018-05-20 23:35:23,256] Starting session. If this hangs, we're mostly likely waiting to connect to the parameter server. One common cause is that the parameter server DNS name isn't resolving yet, or is misspecified.
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 374dac3adf319b23 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:17/cpu:0"
+
+Traceback (most recent call last):
+  File "worker.py", line 188, in <module>
+    tf.app.run()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/platform/app.py", line 43, in run
+    sys.exit(main(sys.argv[:1] + flags_passthrough))
+  File "worker.py", line 180, in main
+    run(args, server)
+  File "worker.py", line 98, in run
+    sess.run(trainer.sync)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 766, in run
+    run_metadata_ptr)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 964, in _run
+    feed_dict_string, options, run_metadata)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1014, in _do_run
+    target_list, options, run_metadata)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1034, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.InvalidArgumentError: Assign requires shapes of both tensors to match. lhs shape= [18] rhs shape= [4]
+	 [[Node: Assign_13 = Assign[T=DT_FLOAT, _class=["loc:@local/action/b"], use_locking=false, validate_shape=true, _device="/job:worker/replica:0/task:17/cpu:0"](local/action/b, global/action/b/read_S3)]]
+
+Caused by op u'Assign_13', defined at:
+  File "worker.py", line 188, in <module>
+    tf.app.run()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/platform/app.py", line 43, in run
+    sys.exit(main(sys.argv[:1] + flags_passthrough))
+  File "worker.py", line 180, in main
+    run(args, server)
+  File "worker.py", line 28, in run
+    trainer = A3C(env, args.task, args.visualise, args.unsup, args.envWrap, args.designHead, args.noReward)
+  File "/home/verma_rohil/noreward-rl/src/a3c.py", line 371, in __init__
+    sync_var_list = [v1.assign(v2) for v1, v2 in zip(pi.var_list, self.network.var_list)]
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/ops/variables.py", line 575, in assign
+    return state_ops.assign(self._variable, value, use_locking=use_locking)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/ops/gen_state_ops.py", line 47, in assign
+    use_locking=use_locking, name=name)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/framework/op_def_library.py", line 759, in apply_op
+    op_def=op_def)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 2240, in create_op
+    original_op=self._default_original_op, op_def=op_def)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 1128, in __init__
+    self._traceback = _extract_stack()
+
+InvalidArgumentError (see above for traceback): Assign requires shapes of both tensors to match. lhs shape= [18] rhs shape= [4]
+	 [[Node: Assign_13 = Assign[T=DT_FLOAT, _class=["loc:@local/action/b"], use_locking=false, validate_shape=true, _device="/job:worker/replica:0/task:17/cpu:0"](local/action/b, global/action/b/read_S3)]]
+
