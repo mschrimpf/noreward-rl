@@ -1,0 +1,23 @@
+#!/bin/sh
+kill 21136
+kill 21137
+kill 21138
+kill 21139
+kill 21140
+kill 21141
+kill 21142
+kill 21143
+kill 21144
+kill 21145
+kill 21146
+kill 21147
+kill 21148
+kill 21149
+kill 21150
+kill 21151
+kill 21152
+kill 21153
+kill 21154
+kill 21155
+kill 21156
+kill 21157

@@ -1,0 +1,23 @@
+#!/bin/sh
+kill 22519
+kill 22520
+kill 22521
+kill 22522
+kill 22523
+kill 22524
+kill 22525
+kill 22526
+kill 22527
+kill 22528
+kill 22529
+kill 22530
+kill 22531
+kill 22532
+kill 22533
+kill 22534
+kill 22535
+kill 22536
+kill 22537
+kill 22538
+kill 22539
+kill 22540

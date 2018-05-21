@@ -1,0 +1,23 @@
+#!/bin/sh
+kill 5565
+kill 5566
+kill 5567
+kill 5568
+kill 5569
+kill 5570
+kill 5571
+kill 5572
+kill 5573
+kill 5574
+kill 5575
+kill 5576
+kill 5577
+kill 5578
+kill 5579
+kill 5580
+kill 5581
+kill 5582
+kill 5583
+kill 5584
+kill 5585
+kill 5586

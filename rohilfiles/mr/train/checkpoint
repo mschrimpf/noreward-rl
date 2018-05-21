@@ -1,0 +1,6 @@
+model_checkpoint_path: "/scratch/mr/train/model.ckpt-6831292"
+all_model_checkpoint_paths: "/scratch/mr/train/model.ckpt-6736549"
+all_model_checkpoint_paths: "/scratch/mr/train/model.ckpt-6760227"
+all_model_checkpoint_paths: "/scratch/mr/train/model.ckpt-6783837"
+all_model_checkpoint_paths: "/scratch/mr/train/model.ckpt-6807668"
+all_model_checkpoint_paths: "/scratch/mr/train/model.ckpt-6831292"
