@@ -1,20 +1,8 @@
-## Curiosity-driven Exploration by Self-supervised Prediction ##
-#### In ICML 2017 [[Project Website]](http://pathak22.github.io/noreward-rl/) [[Demo Video]](http://pathak22.github.io/noreward-rl/index.html#demoVideo)
-
-[Deepak Pathak](https://people.eecs.berkeley.edu/~pathak/), [Pulkit Agrawal](https://people.eecs.berkeley.edu/~pulkitag/), [Alexei A. Efros](https://people.eecs.berkeley.edu/~efros/), [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/)<br/>
-University of California, Berkeley<br/>
+## Unsupervised pre-training in Atari ##
 
 <img src="images/mario1.gif" width="300">    <img src="images/vizdoom.gif" width="351">
 
-This is a tensorflow based implementation for our [ICML 2017 paper on curiosity-driven exploration for reinforcement learning](http://pathak22.github.io/noreward-rl/). Idea is to train agent with intrinsic curiosity-based motivation (ICM) when external rewards from environment are sparse. Surprisingly, you can use ICM even when there are no rewards available from the environment, in which case, agent learns to explore only out of curiosity: 'RL without rewards'. If you find this work useful in your research, please cite:
-
-    @inproceedings{pathakICMl17curiosity,
-        Author = {Pathak, Deepak and Agrawal, Pulkit and
-                  Efros, Alexei A. and Darrell, Trevor},
-        Title = {Curiosity-driven Exploration by Self-supervised Prediction},
-        Booktitle = {International Conference on Machine Learning ({ICML})},
-        Year = {2017}
-    }
+This is a fork from github.com/pathak22/noreward-rl ([ICML 2017 paper on curiosity-driven exploration for reinforcement learning](http://pathak22.github.io/noreward-rl/)), extending the curiosity-driven approach with perceptual pre-training on a range of Atari environments.
 
 ### 1) Installation and Usage
 1.  This code is based on [TensorFlow](https://www.tensorflow.org/). To install, run these commands:
@@ -57,13 +45,3 @@ This is a tensorflow based implementation for our [ICML 2017 paper on curiosity-
   # useful xvfb link: http://stackoverflow.com/a/30336424
   python inference.py --default --env-id doom --record
   ```
-
-### 2) Other helpful pointers
-- [Paper](https://pathak22.github.io/noreward-rl/resources/icml17.pdf)
-- [Project Website](http://pathak22.github.io/noreward-rl/)
-- [Demo Video](http://pathak22.github.io/noreward-rl/index.html#demoVideo)
-- [Reddit Discussion](https://redd.it/6bc8ul)
-- [Media Articles (New Scientist, MIT Tech Review and others)](http://pathak22.github.io/noreward-rl/index.html#media)
-
-### 3) Acknowledgement
-Vanilla A3C code is based on the open source implementation of [universe-starter-agent](https://github.com/openai/universe-starter-agent).
