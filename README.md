@@ -1,6 +1,6 @@
 ## Unsupervised pre-training in Atari ##
 
-<img src="images/mario1.gif" width="300">    <img src="images/vizdoom.gif" width="351">
+<img src="images/vizdoom.gif" width="351">
 
 This is a fork from github.com/pathak22/noreward-rl ([ICML 2017 paper on curiosity-driven exploration for reinforcement learning](http://pathak22.github.io/noreward-rl/)), extending the curiosity-driven approach with perceptual pre-training on a range of Atari environments.
 
