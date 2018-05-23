@@ -1,0 +1,220 @@
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 596, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 103, in __init__
+    BaseHTTPServer.BaseHTTPRequestHandler.__init__(self, *args)
+  File "/usr/lib/python2.7/SocketServer.py", line 652, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 328, in handle_one_request
+    method()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 531, in do_GET
+    self.data_handlers[clean_path](query_params)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 242, in _serve_scalars
+    values = self._multiplexer.Scalars(run, tag)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 250, in Scalars
+    accumulator = self._GetAccumulator(run)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 393, in _GetAccumulator
+    return self._accumulators[run]
+KeyError: 'train_17'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 596, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 103, in __init__
+    BaseHTTPServer.BaseHTTPRequestHandler.__init__(self, *args)
+  File "/usr/lib/python2.7/SocketServer.py", line 652, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 328, in handle_one_request
+    method()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 531, in do_GET
+    self.data_handlers[clean_path](query_params)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 242, in _serve_scalars
+    values = self._multiplexer.Scalars(run, tag)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 250, in Scalars
+    accumulator = self._GetAccumulator(run)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 393, in _GetAccumulator
+    return self._accumulators[run]
+KeyError: 'train_17'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 596, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 103, in __init__
+    BaseHTTPServer.BaseHTTPRequestHandler.__init__(self, *args)
+  File "/usr/lib/python2.7/SocketServer.py", line 652, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 328, in handle_one_request
+    method()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 531, in do_GET
+    self.data_handlers[clean_path](query_params)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 242, in _serve_scalars
+    values = self._multiplexer.Scalars(run, tag)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 250, in Scalars
+    accumulator = self._GetAccumulator(run)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 393, in _GetAccumulator
+    return self._accumulators[run]
+KeyError: 'train_17'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 596, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 103, in __init__
+    BaseHTTPServer.BaseHTTPRequestHandler.__init__(self, *args)
+  File "/usr/lib/python2.7/SocketServer.py", line 652, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 342, in handle
+    self.handle_one_request()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 328, in handle_one_request
+    method()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 531, in do_GET
+    self.data_handlers[clean_path](query_params)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 242, in _serve_scalars
+    values = self._multiplexer.Scalars(run, tag)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 250, in Scalars
+    accumulator = self._GetAccumulator(run)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 393, in _GetAccumulator
+    return self._accumulators[run]
+KeyError: 'train_17'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 596, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 103, in __init__
+    BaseHTTPServer.BaseHTTPRequestHandler.__init__(self, *args)
+  File "/usr/lib/python2.7/SocketServer.py", line 652, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 328, in handle_one_request
+    method()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 531, in do_GET
+    self.data_handlers[clean_path](query_params)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 242, in _serve_scalars
+    values = self._multiplexer.Scalars(run, tag)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 250, in Scalars
+    accumulator = self._GetAccumulator(run)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 393, in _GetAccumulator
+    return self._accumulators[run]
+KeyError: 'train_17'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 596, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 103, in __init__
+    BaseHTTPServer.BaseHTTPRequestHandler.__init__(self, *args)
+  File "/usr/lib/python2.7/SocketServer.py", line 652, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 328, in handle_one_request
+    method()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 531, in do_GET
+    self.data_handlers[clean_path](query_params)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 242, in _serve_scalars
+    values = self._multiplexer.Scalars(run, tag)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 250, in Scalars
+    accumulator = self._GetAccumulator(run)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 393, in _GetAccumulator
+    return self._accumulators[run]
+KeyError: 'train_17'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 596, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 103, in __init__
+    BaseHTTPServer.BaseHTTPRequestHandler.__init__(self, *args)
+  File "/usr/lib/python2.7/SocketServer.py", line 652, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 328, in handle_one_request
+    method()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 531, in do_GET
+    self.data_handlers[clean_path](query_params)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 242, in _serve_scalars
+    values = self._multiplexer.Scalars(run, tag)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 250, in Scalars
+    accumulator = self._GetAccumulator(run)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 393, in _GetAccumulator
+    return self._accumulators[run]
+KeyError: 'train_17'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 596, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 103, in __init__
+    BaseHTTPServer.BaseHTTPRequestHandler.__init__(self, *args)
+  File "/usr/lib/python2.7/SocketServer.py", line 652, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 328, in handle_one_request
+    method()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 531, in do_GET
+    self.data_handlers[clean_path](query_params)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 242, in _serve_scalars
+    values = self._multiplexer.Scalars(run, tag)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 250, in Scalars
+    accumulator = self._GetAccumulator(run)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 393, in _GetAccumulator
+    return self._accumulators[run]
+KeyError: 'train_17'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 596, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 103, in __init__
+    BaseHTTPServer.BaseHTTPRequestHandler.__init__(self, *args)
+  File "/usr/lib/python2.7/SocketServer.py", line 652, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 328, in handle_one_request
+    method()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 531, in do_GET
+    self.data_handlers[clean_path](query_params)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 242, in _serve_scalars
+    values = self._multiplexer.Scalars(run, tag)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 250, in Scalars
+    accumulator = self._GetAccumulator(run)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 393, in _GetAccumulator
+    return self._accumulators[run]
+KeyError: 'train_17'
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/SocketServer.py", line 596, in process_request_thread
+    self.finish_request(request, client_address)
+  File "/usr/lib/python2.7/SocketServer.py", line 331, in finish_request
+    self.RequestHandlerClass(request, client_address, self)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 103, in __init__
+    BaseHTTPServer.BaseHTTPRequestHandler.__init__(self, *args)
+  File "/usr/lib/python2.7/SocketServer.py", line 652, in __init__
+    self.handle()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 340, in handle
+    self.handle_one_request()
+  File "/usr/lib/python2.7/BaseHTTPServer.py", line 328, in handle_one_request
+    method()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 531, in do_GET
+    self.data_handlers[clean_path](query_params)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/tensorboard/backend/handler.py", line 242, in _serve_scalars
+    values = self._multiplexer.Scalars(run, tag)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 250, in Scalars
+    accumulator = self._GetAccumulator(run)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/summary/event_multiplexer.py", line 393, in _GetAccumulator
+    return self._accumulators[run]
+KeyError: 'train_17'

@@ -75,10 +75,10 @@ class Dataset:
     # Create all TFrecords files
     def create_tfrecords(self):
 
-        if not self.opt.dataset.reuse_TFrecords:
+        if not self.opt.dataset['reuse_TFrecords']:
             tfrecords_path = self.opt.log_dir_base + self.opt.name + '/data/'
         else:
-            tfrecords_path = self.opt.log_dir_base + self.opt.dataset.reuse_TFrecords_path + '/data/'
+            tfrecords_path = self.opt.log_dir_base + self.opt.dataset['reuse_TFrecords_path'] + '/data/'
             print("REUSING TFRECORDS")
 
         if os.path.isfile(tfrecords_path + 'test.tfrecords'):
@@ -90,10 +90,10 @@ class Dataset:
         os.makedirs(tfrecords_path)
 
         print("CREATING TFRECORDS")
-        print(self.opt.dataset.dataset_path)
+        print(self.opt.dataset['dataset_path'])
 
         train_addrs, train_labels, val_addrs, val_labels = self.get_data_trainval()
-        app = self.opt.dataset.transfer_append_name
+        app = self.opt.dataset['transfer_append_name']
         self.write_tfrecords(tfrecords_path, 'train' + app, train_addrs, train_labels)
         self.write_tfrecords(tfrecords_path, 'val' + app, val_addrs, val_labels)
 
@@ -105,7 +105,7 @@ class Dataset:
         shutil.rmtree(tfrecords_path)
 
     def create_dataset(self, augmentation=False, standarization=False, set_name='train', repeat=False):
-        app = self.opt.dataset.transfer_append_name
+        app = self.opt.dataset['transfer_append_name']
         set_name_app = set_name + app
 
         # Transforms a scalar string `example_proto` into a pair of a scalar string and
@@ -123,15 +123,19 @@ class Dataset:
             image = tf.reshape(image, S)
 
             float_image = self.preprocess_image(augmentation, standarization, image)
+            label = parsed_features[set_name_app + '/label']
 
-            return float_image, parsed_features[set_name_app + '/label']
+            stacked_images = tf.tile(float_image, [1, 1, self.opt.dataset['n_channels']])
+            # stacked_labels = tf.tile(tf.expand_dims(label, 0), self.opt.dataset['n_channels'])
+            # return float_image, label
+            return stacked_images, label  # do not stack labels for now, hope that gradients will be evenly distributed
 
         # Creates a dataset that reads all of the examples from two files, and extracts
         # the image and label features.
-        if not self.opt.dataset.reuse_TFrecords:
+        if not self.opt.dataset['reuse_TFrecords']:
             tfrecords_path = self.opt.log_dir_base + self.opt.name + '/data/'
         else:
-            tfrecords_path = self.opt.log_dir_base + self.opt.dataset.reuse_TFrecords_path + '/data/'
+            tfrecords_path = self.opt.log_dir_base + self.opt.dataset['reuse_TFrecords_path'] + '/data/'
 
         filenames = [tfrecords_path + set_name_app + '.tfrecords']
         dataset = tf.contrib.data.TFRecordDataset(filenames)
@@ -140,7 +144,7 @@ class Dataset:
         if repeat:
             dataset = dataset.repeat()  # Repeat the input indefinitely.
 
-        return dataset.batch(self.opt.hyper.batch_size)
+        return dataset.batch(self.opt.hyper['batch_size'])
 
 
 class Cifar10(Dataset):
@@ -155,7 +159,7 @@ class Cifar10(Dataset):
         self.num_images_training = 50000
         self.num_images_test = 10000
 
-        self.num_images_epoch = self.opt.dataset.proportion_training_set * self.num_images_training
+        self.num_images_epoch = self.opt.dataset['proportion_training_set'] * self.num_images_training
         self.num_images_val = self.num_images_training - self.num_images_epoch
 
         self.image_size = opt.ob_space[:-1]
@@ -178,17 +182,18 @@ class Cifar10(Dataset):
         perm_x = (perm / 32).astype("uint8")
         perm_y = (perm % 32).astype("uint8")
 
-        file_names = glob.glob(self.opt.dataset.dataset_path + "*_batch_*")
+        file_names = glob.glob(self.opt.dataset['dataset_path'] + "*_batch_*")
+        assert len(file_names) > 0
         for l in file_names:
             d = self.__unpickle(l)
             tmp = dict(d)
             X = tmp['data'].astype("uint8").reshape(10000, 3, 32, 32)
-            if self.opt.dataset.scramble_data:
+            if self.opt.dataset['scramble_data']:
                 X = X[:, :, perm_x, perm_y].reshape(10000, 3, 32, 32)
             X = X.transpose(0, 2, 3, 1)
             # X = tf.image.resize_images(X, self.image_size)
             [addrs.append(l) for l in X]
-            if not self.opt.dataset.random_labels:
+            if not self.opt.dataset['random_labels']:
                 [labels.append(l) for l in tmp['labels']]
             else:
                 [labels.append(randint(0, 9)) for l in tmp['labels']]
@@ -199,18 +204,20 @@ class Cifar10(Dataset):
             val_labels = []
 
             # Divide the data into 95% train, 5% validation
-            [train_addrs.append(elem) for elem in addrs[0:int(self.opt.dataset.proportion_training_set * len(addrs))]]
-            [train_labels.append(elem) for elem in labels[0:int(self.opt.dataset.proportion_training_set * len(addrs))]]
+            [train_addrs.append(elem) for elem in
+             addrs[0:int(self.opt.dataset['proportion_training_set'] * len(addrs))]]
+            [train_labels.append(elem) for elem in
+             labels[0:int(self.opt.dataset['proportion_training_set'] * len(addrs))]]
 
-            [val_addrs.append(elem) for elem in addrs[int(self.opt.dataset.proportion_training_set * len(addrs)):]]
-            [val_labels.append(elem) for elem in labels[int(self.opt.dataset.proportion_training_set * len(addrs)):]]
+            [val_addrs.append(elem) for elem in addrs[int(self.opt.dataset['proportion_training_set'] * len(addrs)):]]
+            [val_labels.append(elem) for elem in labels[int(self.opt.dataset['proportion_training_set'] * len(addrs)):]]
 
         return train_addrs, train_labels, val_addrs, val_labels
 
     def get_data_test(self):
         test_addrs = []
         test_labels = []
-        file_names = glob.glob(self.opt.dataset.dataset_path + "test_batch")
+        file_names = glob.glob(self.opt.dataset['dataset_path'] + "test_batch")
 
         perm = np.random.permutation(32 * 32).astype("uint8")
         perm_x = (perm / 32).astype("uint8")
@@ -220,12 +227,12 @@ class Cifar10(Dataset):
             d = self.__unpickle(l)
             tmp = dict(d)
             X = tmp['data'].astype("uint8").reshape(10000, 3, 32, 32)
-            if self.opt.dataset.scramble_data:
+            if self.opt.dataset['scramble_data']:
                 X = X[:, :, perm_x, perm_y].reshape(10000, 3, 32, 32)
             X = X.transpose(0, 2, 3, 1)
 
             [test_addrs.append(l) for l in X]
-            if not self.opt.dataset.random_labels:
+            if not self.opt.dataset['random_labels']:
                 [test_labels.append(l) for l in tmp['labels']]
             else:
                 [test_labels.append(randint(0, 9)) for l in tmp['labels']]
@@ -233,34 +240,37 @@ class Cifar10(Dataset):
         return test_addrs, test_labels
 
     def preprocess_image(self, augmentation, standarization, image):
-        if augmentation:
-            # Randomly crop a [height, width] section of the image.
-            distorted_image = tf.random_crop(image, [self.opt.hyper.crop_size, self.opt.hyper.crop_size, 3])
-
-            # Randomly flip the image horizontally.
-            distorted_image = tf.image.random_flip_left_right(distorted_image)
-
-            # Because these operations are not commutative, consider randomizing
-            # the order their operation.
-            # NOTE: since per_image_standardization zeros the mean and makes
-            # the stddev unit, this likely has no effect see tensorflow#1458.
-            distorted_image = tf.image.random_brightness(distorted_image,
-                                                         max_delta=63)
-            distorted_image = tf.image.random_contrast(distorted_image,
-                                                       lower=0.2, upper=1.8)
-        else:
-
-            distorted_image = tf.image.resize_image_with_crop_or_pad(image,
-                                                                     self.opt.hyper.crop_size, self.opt.hyper.crop_size)
+        assert not augmentation and standarization
+        distorted_image = tf.image.resize_image_with_crop_or_pad(image,
+                                                                 self.opt.hyper['crop_size'],
+                                                                 self.opt.hyper['crop_size'])
 
         distorted_image = tf.image.resize_images(distorted_image, self.image_size)
+        # Subtract off the mean and divide by the variance of the pixels.
+        float_image = tf.image.per_image_standardization(distorted_image)
+        float_image.set_shape(list(self.image_size) + [3])
 
-        if standarization:
-            # Subtract off the mean and divide by the variance of the pixels.
-            float_image = tf.image.per_image_standardization(distorted_image)
-            # float_image.set_shape([self.opt.hyper.crop_size, self.opt.hyper.crop_size, 3])
-            float_image.set_shape(list(self.image_size) + [3])
-        else:
-            float_image = distorted_image
+        float_image = self._doom_preprocessing(float_image) if self.opt.dataset['n_channels'] == 4 \
+            else self._atari_preprocessing(float_image)
 
         return float_image
+
+    def _doom_preprocessing(self, im):
+        # following https://github.com/pathak22/noreward-rl/blob/master/src/env_wrapper.py#L20
+        """Converts an RGB image to a Y image (as in YUV).
+        These coefficients are taken from the torch/image library.
+        Beware: these are more critical than you might think, as the
+        monochromatic contrast can be surprisingly low.
+        """
+        if len(im.shape) < 3:
+            return im
+        im = tf.reduce_sum(im * [0.299, 0.587, 0.115], axis=2)
+        return tf.reshape(im, [42, 42, 1])
+
+    def _atari_preprocessing(self, im):
+        # following https://github.com/pathak22/noreward-rl/blob/master/src/envs.py#L275
+        im = tf.reduce_mean(im, 2)  # take mean along channels
+        # im = im.astype(np.float32)
+        im *= (1.0 / 255.0)
+        im = tf.reshape(im, [42, 42, 1])
+        return im

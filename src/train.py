@@ -32,7 +32,7 @@ parser.add_argument('--expName', type=str, default='a3c',
                     help="Experiment tmux session-name. Default a3c.")
 parser.add_argument('--expId', type=int, default=0,
                     help="Experiment Id >=0. Needed while runnig more than one run per machine.")
-parser.add_argument('--savio', action='store_true',
+parser.add_argument('--savio', action='store_true', default=False,
                     help="Savio or KNL cpu cluster hacks")
 parser.add_argument('--default', action='store_true', help="run with default params")
 parser.add_argument('--pretrain', type=str, default=None, help="Checkpoint dir (generally ..../train/) to load from.")
@@ -91,8 +91,12 @@ def create_commands(session, num_workers, remotes, env_id, logdir, shell='bash',
             "w-%d" % i, base_cmd + ["--job-name", "worker", "--task", str(i), "--remotes", remotes[i]], mode, logdir, shell)]
 
     # No tensorboard or htop window if running multiple experiments per machine
+    tensorboard_port = "8080"
     if session == 'a3c':
-        cmds_map += [new_cmd(session, "tb", ["tensorboard", "--logdir", logdir, "--port", "12345"], mode, logdir, shell)]
+        tb_cmd = new_cmd(session, "tb", ["tensorboard", "--logdir", logdir, "--port", ("%s" % tensorboard_port)], mode, logdir, shell)
+        tb_cmd = (tb_cmd[0], "bash -c 'source $(dirname $(which conda))/../etc/profile.d/conda.sh && "
+                             "conda activate curiosity && " + tb_cmd[1] + "'")
+        cmds_map += [tb_cmd]
     if session == 'a3c' and mode == 'tmux':
         cmds_map += [new_cmd(session, "htop", ["htop"], mode, logdir, shell)]
 
@@ -111,11 +115,11 @@ def create_commands(session, num_workers, remotes, env_id, logdir, shell='bash',
         notes += ["Use `tmux kill-session -t {}` to kill the job".format(session)]
     else:
         notes += ["Use `tail -f {}/*.out` to watch process output".format(logdir)]
-    notes += ["Point your browser to http://localhost:12345 to see Tensorboard"]
+    notes += [("Point your browser to http://localhost:%s to see Tensorboard" % tensorboard_port)]
 
     if mode == 'tmux':
         cmds += [
-        "kill -9 $( lsof -i:12345 -t ) > /dev/null 2>&1",  # kill any process using tensorboard's port
+            ("kill -9 $( lsof -i:%s -t ) > /dev/null 2>&1" % tensorboard_port),  # kill any process using tensorboard's port
         "kill -9 $( lsof -i:{}-{} -t ) > /dev/null 2>&1".format(psPort, num_workers+psPort), # kill any processes using ps / worker ports
         "tmux kill-session -t {}".format(session),
         "tmux new-session -s {} -n {} -d {}".format(session, windows[0], shell)
@@ -141,6 +145,7 @@ def run():
     psPort = 12222 + 50*args.expId
     delay = 220*args.expId if 'doom' in args.env_id.lower() or 'labyrinth' in args.env_id.lower() else 5*args.expId
     delay = 6*delay if 'mario' in args.env_id else delay
+    delay = 0
 
     cmds, notes = create_commands(args.expName, args.num_workers, args.remotes, args.env_id,
                                     args.log_dir, mode=args.mode, visualise=args.visualise,

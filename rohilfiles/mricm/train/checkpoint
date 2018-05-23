@@ -1,0 +1,6 @@
+model_checkpoint_path: "/scratch/mricm/train/model.ckpt-1499887"
+all_model_checkpoint_paths: "/scratch/mricm/train/model.ckpt-1403408"
+all_model_checkpoint_paths: "/scratch/mricm/train/model.ckpt-1428242"
+all_model_checkpoint_paths: "/scratch/mricm/train/model.ckpt-1452681"
+all_model_checkpoint_paths: "/scratch/mricm/train/model.ckpt-1476299"
+all_model_checkpoint_paths: "/scratch/mricm/train/model.ckpt-1499887"

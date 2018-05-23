@@ -1,0 +1,460 @@
+[2018-05-20 20:48:03,544] Writing logs to file: /tmp/universe-21150.log
+I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:197] Initialize GrpcChannelCache for job ps -> {0 -> 127.0.0.1:12222}
+I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:197] Initialize GrpcChannelCache for job worker -> {0 -> 127.0.0.1:12223, 1 -> 127.0.0.1:12224, 2 -> 127.0.0.1:12225, 3 -> 127.0.0.1:12226, 4 -> 127.0.0.1:12227, 5 -> 127.0.0.1:12228, 6 -> 127.0.0.1:12229, 7 -> 127.0.0.1:12230, 8 -> 127.0.0.1:12231, 9 -> 127.0.0.1:12232, 10 -> 127.0.0.1:12233, 11 -> 127.0.0.1:12234, 12 -> 127.0.0.1:12235, 13 -> localhost:12236, 14 -> 127.0.0.1:12237, 15 -> 127.0.0.1:12238, 16 -> 127.0.0.1:12239, 17 -> 127.0.0.1:12240, 18 -> 127.0.0.1:12241, 19 -> 127.0.0.1:12242}
+I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:211] Started server with target: grpc://localhost:12236
+[2018-05-20 20:48:03,562] Making new env: MontezumaRevenge-v0
+Using universe head design
+Using universe head design
+Using universe head design
+Using universe head design
+Using universe head design
+Using universe head design
+Optimizer: ADAM with lr: 0.000100
+Input observation shape:  (42, 42, 1)
+[2018-05-20 20:48:08,513] Trainable vars:
+[2018-05-20 20:48:08,513]   global/l1/W:0 (3, 3, 1, 32)
+[2018-05-20 20:48:08,513]   global/l1/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,513]   global/l2/W:0 (3, 3, 32, 32)
+[2018-05-20 20:48:08,514]   global/l2/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,514]   global/l3/W:0 (3, 3, 32, 32)
+[2018-05-20 20:48:08,514]   global/l3/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,514]   global/l4/W:0 (3, 3, 32, 32)
+[2018-05-20 20:48:08,514]   global/l4/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,514]   global/RNN/BasicLSTMCell/Linear/Matrix:0 (544, 1024)
+[2018-05-20 20:48:08,514]   global/RNN/BasicLSTMCell/Linear/Bias:0 (1024,)
+[2018-05-20 20:48:08,515]   global/value/w:0 (256, 1)
+[2018-05-20 20:48:08,515]   global/value/b:0 (1,)
+[2018-05-20 20:48:08,515]   global/action/w:0 (256, 18)
+[2018-05-20 20:48:08,515]   global/action/b:0 (18,)
+[2018-05-20 20:48:08,515]   global/predictor/l1/W:0 (3, 3, 1, 32)
+[2018-05-20 20:48:08,515]   global/predictor/l1/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,515]   global/predictor/l2/W:0 (3, 3, 32, 32)
+[2018-05-20 20:48:08,516]   global/predictor/l2/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,516]   global/predictor/l3/W:0 (3, 3, 32, 32)
+[2018-05-20 20:48:08,516]   global/predictor/l3/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,516]   global/predictor/l4/W:0 (3, 3, 32, 32)
+[2018-05-20 20:48:08,516]   global/predictor/l4/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,516]   global/predictor/g1/w:0 (576, 256)
+[2018-05-20 20:48:08,516]   global/predictor/g1/b:0 (256,)
+[2018-05-20 20:48:08,517]   global/predictor/glast/w:0 (256, 18)
+[2018-05-20 20:48:08,517]   global/predictor/glast/b:0 (18,)
+[2018-05-20 20:48:08,517]   global/predictor/f1/w:0 (306, 256)
+[2018-05-20 20:48:08,517]   global/predictor/f1/b:0 (256,)
+[2018-05-20 20:48:08,517]   global/predictor/flast/w:0 (256, 288)
+[2018-05-20 20:48:08,517]   global/predictor/flast/b:0 (288,)
+[2018-05-20 20:48:08,517]   local/l1/W:0 (3, 3, 1, 32)
+[2018-05-20 20:48:08,517]   local/l1/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,518]   local/l2/W:0 (3, 3, 32, 32)
+[2018-05-20 20:48:08,518]   local/l2/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,518]   local/l3/W:0 (3, 3, 32, 32)
+[2018-05-20 20:48:08,518]   local/l3/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,518]   local/l4/W:0 (3, 3, 32, 32)
+[2018-05-20 20:48:08,518]   local/l4/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,518]   local/RNN/BasicLSTMCell/Linear/Matrix:0 (544, 1024)
+[2018-05-20 20:48:08,519]   local/RNN/BasicLSTMCell/Linear/Bias:0 (1024,)
+[2018-05-20 20:48:08,519]   local/value/w:0 (256, 1)
+[2018-05-20 20:48:08,519]   local/value/b:0 (1,)
+[2018-05-20 20:48:08,519]   local/action/w:0 (256, 18)
+[2018-05-20 20:48:08,519]   local/action/b:0 (18,)
+[2018-05-20 20:48:08,519]   local/predictor/l1/W:0 (3, 3, 1, 32)
+[2018-05-20 20:48:08,519]   local/predictor/l1/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,519]   local/predictor/l2/W:0 (3, 3, 32, 32)
+[2018-05-20 20:48:08,520]   local/predictor/l2/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,520]   local/predictor/l3/W:0 (3, 3, 32, 32)
+[2018-05-20 20:48:08,520]   local/predictor/l3/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,520]   local/predictor/l4/W:0 (3, 3, 32, 32)
+[2018-05-20 20:48:08,520]   local/predictor/l4/b:0 (1, 1, 1, 32)
+[2018-05-20 20:48:08,520]   local/predictor/g1/w:0 (576, 256)
+[2018-05-20 20:48:08,521]   local/predictor/g1/b:0 (256,)
+[2018-05-20 20:48:08,521]   local/predictor/glast/w:0 (256, 18)
+[2018-05-20 20:48:08,521]   local/predictor/glast/b:0 (18,)
+[2018-05-20 20:48:08,521]   local/predictor/f1/w:0 (306, 256)
+[2018-05-20 20:48:08,521]   local/predictor/f1/b:0 (256,)
+[2018-05-20 20:48:08,521]   local/predictor/flast/w:0 (256, 288)
+[2018-05-20 20:48:08,521]   local/predictor/flast/b:0 (288,)
+[2018-05-20 20:48:08,522] Events directory: /scratch/mricm/train_13
+[2018-05-20 20:48:10,303] Starting session. If this hangs, we're mostly likely waiting to connect to the parameter server. One common cause is that the parameter server DNS name isn't resolving yet, or is misspecified.
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session f13822f06ecc5f33 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:13/cpu:0"
+
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session 572117a3352e6a46 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:13/cpu:0"
+
+[2018-05-20 20:48:42,354] Called reset on <Unvectorize<VectorizeFilter[<class 'envs.DiagnosticsInfoI'>]<AtariRescale42x42<Vectorize<TimeLimit<AtariEnv instance>>>>>> before configuring. Configuring automatically with default arguments
+[2018-05-20 20:48:42,368] Resetting environment logs
+[2018-05-20 20:48:42,404] Starting training at gobal_step=3628
+[2018-05-20 20:48:54,080] True Game terminating: env_episode_reward=0.0 episode_length=540
+Episode finished. Sum of shaped rewards: 0.00. Length: 540. Bonus: 2.1911.
+[2018-05-20 20:48:54,101] Resetting environment logs
+Global Step Counter: 13868
+[2018-05-20 20:49:08,019] True Game terminating: env_episode_reward=0.0 episode_length=650
+Episode finished. Sum of shaped rewards: 0.00. Length: 650. Bonus: 0.3630.
+[2018-05-20 20:49:08,046] Resetting environment logs
+Global Step Counter: 25753
+[2018-05-20 20:49:18,015] True Game terminating: env_episode_reward=0.0 episode_length=487
+Episode finished. Sum of shaped rewards: 0.00. Length: 487. Bonus: 0.1538.
+[2018-05-20 20:49:18,045] Resetting environment logs
+Global Step Counter: 34294
+[2018-05-20 20:49:34,850] True Game terminating: env_episode_reward=0.0 episode_length=805
+Episode finished. Sum of shaped rewards: 0.00. Length: 805. Bonus: 0.1787.
+[2018-05-20 20:49:34,876] Resetting environment logs
+Global Step Counter: 48839
+[2018-05-20 20:49:45,767] True Game terminating: env_episode_reward=0.0 episode_length=531
+Episode finished. Sum of shaped rewards: 0.00. Length: 531. Bonus: 0.1470.
+[2018-05-20 20:49:45,790] Resetting environment logs
+Global Step Counter: 58246
+[2018-05-20 20:50:04,970] True Game terminating: env_episode_reward=0.0 episode_length=915
+Episode finished. Sum of shaped rewards: 0.00. Length: 915. Bonus: 0.2112.
+[2018-05-20 20:50:04,992] Resetting environment logs
+Global Step Counter: 74875
+[2018-05-20 20:50:26,447] True Game terminating: env_episode_reward=0.0 episode_length=1027
+Episode finished. Sum of shaped rewards: 0.00. Length: 1027. Bonus: 0.2187.
+[2018-05-20 20:50:26,482] Resetting environment logs
+Global Step Counter: 93342
+[2018-05-20 20:51:04,697] True Game terminating: env_episode_reward=0.0 episode_length=1818
+Episode finished. Sum of shaped rewards: 0.00. Length: 1818. Bonus: 0.3627.
+[2018-05-20 20:51:04,720] Resetting environment logs
+Global Step Counter: 126274
+[2018-05-20 20:51:39,828] True Game terminating: env_episode_reward=0.0 episode_length=1703
+Episode finished. Sum of shaped rewards: 0.00. Length: 1703. Bonus: 0.2976.
+[2018-05-20 20:51:39,852] Resetting environment logs
+Global Step Counter: 156446
+[2018-05-20 20:52:12,413] True Game terminating: env_episode_reward=0.0 episode_length=1545
+Episode finished. Sum of shaped rewards: 0.00. Length: 1545. Bonus: 0.2324.
+[2018-05-20 20:52:12,448] Resetting environment logs
+Global Step Counter: 184556
+[2018-05-20 20:52:23,489] True Game terminating: env_episode_reward=0.0 episode_length=520
+Episode finished. Sum of shaped rewards: 0.00. Length: 520. Bonus: 0.0755.
+[2018-05-20 20:52:23,510] Resetting environment logs
+Global Step Counter: 193987
+[2018-05-20 20:52:33,229] True Game terminating: env_episode_reward=0.0 episode_length=467
+Episode finished. Sum of shaped rewards: 0.00. Length: 467. Bonus: 0.0654.
+[2018-05-20 20:52:33,252] Resetting environment logs
+Global Step Counter: 202244
+[2018-05-20 20:52:43,703] True Game terminating: env_episode_reward=0.0 episode_length=483
+Episode finished. Sum of shaped rewards: 0.00. Length: 483. Bonus: 0.0679.
+[2018-05-20 20:52:43,726] Resetting environment logs
+Global Step Counter: 211306
+[2018-05-20 20:52:55,330] True Game terminating: env_episode_reward=0.0 episode_length=563
+Episode finished. Sum of shaped rewards: 0.00. Length: 563. Bonus: 0.0899.
+[2018-05-20 20:52:55,351] Resetting environment logs
+Global Step Counter: 221404
+[2018-05-20 20:53:12,672] True Game terminating: env_episode_reward=0.0 episode_length=829
+Episode finished. Sum of shaped rewards: 0.00. Length: 829. Bonus: 0.1161.
+[2018-05-20 20:53:12,707] Resetting environment logs
+Global Step Counter: 236169
+[2018-05-20 20:53:57,658] True Game terminating: env_episode_reward=0.0 episode_length=2125
+Episode finished. Sum of shaped rewards: 0.00. Length: 2125. Bonus: 0.2840.
+[2018-05-20 20:53:57,679] Resetting environment logs
+Global Step Counter: 275005
+[2018-05-20 20:54:11,900] True Game terminating: env_episode_reward=0.0 episode_length=669
+Episode finished. Sum of shaped rewards: 0.00. Length: 669. Bonus: 0.0720.
+[2018-05-20 20:54:11,921] Resetting environment logs
+Global Step Counter: 287249
+[2018-05-20 20:54:37,494] True Game terminating: env_episode_reward=0.0 episode_length=1212
+Episode finished. Sum of shaped rewards: 0.00. Length: 1212. Bonus: 0.1526.
+[2018-05-20 20:54:37,518] Resetting environment logs
+Global Step Counter: 309206
+[2018-05-20 20:54:58,047] True Game terminating: env_episode_reward=0.0 episode_length=985
+Episode finished. Sum of shaped rewards: 0.00. Length: 985. Bonus: 0.1138.
+[2018-05-20 20:54:58,066] Resetting environment logs
+Global Step Counter: 326727
+[2018-05-20 20:55:18,883] True Game terminating: env_episode_reward=0.0 episode_length=997
+Episode finished. Sum of shaped rewards: 0.00. Length: 997. Bonus: 0.0989.
+[2018-05-20 20:55:18,906] Resetting environment logs
+Global Step Counter: 344511
+[2018-05-20 20:55:39,952] True Game terminating: env_episode_reward=0.0 episode_length=1006
+Episode finished. Sum of shaped rewards: 0.00. Length: 1006. Bonus: 0.1015.
+[2018-05-20 20:55:39,971] Resetting environment logs
+Global Step Counter: 362675
+[2018-05-20 20:56:02,067] True Game terminating: env_episode_reward=0.0 episode_length=1050
+Episode finished. Sum of shaped rewards: 0.00. Length: 1050. Bonus: 0.1442.
+[2018-05-20 20:56:02,091] Resetting environment logs
+Global Step Counter: 381502
+[2018-05-20 20:56:21,087] True Game terminating: env_episode_reward=0.0 episode_length=905
+Episode finished. Sum of shaped rewards: 0.00. Length: 905. Bonus: 0.0735.
+[2018-05-20 20:56:21,109] Resetting environment logs
+Global Step Counter: 397538
+[2018-05-20 20:56:36,075] True Game terminating: env_episode_reward=0.0 episode_length=683
+Episode finished. Sum of shaped rewards: 0.00. Length: 683. Bonus: 0.1007.
+[2018-05-20 20:56:36,104] Resetting environment logs
+Global Step Counter: 410199
+[2018-05-20 20:56:57,234] True Game terminating: env_episode_reward=0.0 episode_length=989
+Episode finished. Sum of shaped rewards: 0.00. Length: 989. Bonus: 1.6958.
+[2018-05-20 20:56:57,256] Resetting environment logs
+Global Step Counter: 427988
+[2018-05-20 20:57:17,099] True Game terminating: env_episode_reward=0.0 episode_length=910
+Episode finished. Sum of shaped rewards: 0.00. Length: 910. Bonus: 0.0581.
+[2018-05-20 20:57:17,121] Resetting environment logs
+Global Step Counter: 444495
+[2018-05-20 20:57:27,528] True Game terminating: env_episode_reward=0.0 episode_length=500
+Episode finished. Sum of shaped rewards: 0.00. Length: 500. Bonus: 0.0285.
+[2018-05-20 20:57:27,551] Resetting environment logs
+Global Step Counter: 453145
+[2018-05-20 20:57:47,743] True Game terminating: env_episode_reward=0.0 episode_length=913
+Episode finished. Sum of shaped rewards: 0.00. Length: 913. Bonus: 0.0638.
+[2018-05-20 20:57:47,764] Resetting environment logs
+Global Step Counter: 469873
+[2018-05-20 20:58:06,922] True Game terminating: env_episode_reward=0.0 episode_length=874
+Episode finished. Sum of shaped rewards: 0.00. Length: 874. Bonus: 0.0864.
+[2018-05-20 20:58:06,946] Resetting environment logs
+Global Step Counter: 485757
+[2018-05-20 20:58:28,004] True Game terminating: env_episode_reward=0.0 episode_length=985
+Episode finished. Sum of shaped rewards: 0.00. Length: 985. Bonus: 0.1117.
+[2018-05-20 20:58:28,034] Resetting environment logs
+Global Step Counter: 503477
+[2018-05-20 20:58:54,871] True Game terminating: env_episode_reward=0.0 episode_length=1256
+Episode finished. Sum of shaped rewards: 0.00. Length: 1256. Bonus: 0.1607.
+[2018-05-20 20:58:54,891] Resetting environment logs
+Global Step Counter: 525856
+[2018-05-20 20:59:12,856] True Game terminating: env_episode_reward=0.0 episode_length=810
+Episode finished. Sum of shaped rewards: 0.00. Length: 810. Bonus: 0.1125.
+[2018-05-20 20:59:12,878] Resetting environment logs
+Global Step Counter: 540767
+[2018-05-20 20:59:26,041] True Game terminating: env_episode_reward=0.0 episode_length=621
+Episode finished. Sum of shaped rewards: 0.00. Length: 621. Bonus: 0.0273.
+[2018-05-20 20:59:26,064] Resetting environment logs
+Global Step Counter: 551829
+[2018-05-20 20:59:41,131] True Game terminating: env_episode_reward=0.0 episode_length=720
+Episode finished. Sum of shaped rewards: 0.00. Length: 720. Bonus: 0.1084.
+[2018-05-20 20:59:41,152] Resetting environment logs
+Global Step Counter: 564444
+[2018-05-20 20:59:56,780] True Game terminating: env_episode_reward=0.0 episode_length=722
+Episode finished. Sum of shaped rewards: 0.00. Length: 722. Bonus: 0.1258.
+[2018-05-20 20:59:56,877] Resetting environment logs
+Global Step Counter: 577502
+[2018-05-20 21:00:07,427] True Game terminating: env_episode_reward=0.0 episode_length=500
+Episode finished. Sum of shaped rewards: 0.00. Length: 500. Bonus: 0.0248.
+[2018-05-20 21:00:07,448] Resetting environment logs
+Global Step Counter: 586313
+[2018-05-20 21:00:20,522] True Game terminating: env_episode_reward=0.0 episode_length=618
+Episode finished. Sum of shaped rewards: 0.00. Length: 618. Bonus: 0.0358.
+[2018-05-20 21:00:20,545] Resetting environment logs
+Global Step Counter: 597143
+[2018-05-20 21:00:37,148] True Game terminating: env_episode_reward=0.0 episode_length=775
+Episode finished. Sum of shaped rewards: 0.00. Length: 775. Bonus: 0.0875.
+[2018-05-20 21:00:37,169] Resetting environment logs
+Global Step Counter: 610923
+[2018-05-20 21:00:49,859] True Game terminating: env_episode_reward=0.0 episode_length=595
+Episode finished. Sum of shaped rewards: 0.00. Length: 595. Bonus: 0.0507.
+[2018-05-20 21:00:49,878] Resetting environment logs
+Global Step Counter: 621506
+[2018-05-20 21:01:11,841] True Game terminating: env_episode_reward=0.0 episode_length=1017
+Episode finished. Sum of shaped rewards: 0.00. Length: 1017. Bonus: 0.1254.
+[2018-05-20 21:01:11,862] Resetting environment logs
+Global Step Counter: 639727
+[2018-05-20 21:01:31,132] True Game terminating: env_episode_reward=0.0 episode_length=893
+Episode finished. Sum of shaped rewards: 0.00. Length: 893. Bonus: 0.0457.
+[2018-05-20 21:01:31,155] Resetting environment logs
+Global Step Counter: 655716
+[2018-05-20 21:01:55,912] True Game terminating: env_episode_reward=0.0 episode_length=1127
+Episode finished. Sum of shaped rewards: 0.00. Length: 1127. Bonus: 0.1157.
+[2018-05-20 21:01:55,961] Resetting environment logs
+Global Step Counter: 676281
+[2018-05-20 21:02:12,652] True Game terminating: env_episode_reward=0.0 episode_length=775
+Episode finished. Sum of shaped rewards: 0.00. Length: 775. Bonus: 0.0386.
+[2018-05-20 21:02:12,674] Resetting environment logs
+Global Step Counter: 689972
+[2018-05-20 21:02:41,146] True Game terminating: env_episode_reward=0.0 episode_length=1302
+Episode finished. Sum of shaped rewards: 0.00. Length: 1302. Bonus: 0.1264.
+[2018-05-20 21:02:41,168] Resetting environment logs
+Global Step Counter: 713511
+[2018-05-20 21:02:57,638] True Game terminating: env_episode_reward=0.0 episode_length=754
+Episode finished. Sum of shaped rewards: 0.00. Length: 754. Bonus: 0.0360.
+[2018-05-20 21:02:57,661] Resetting environment logs
+Global Step Counter: 726865
+[2018-05-20 21:03:13,115] True Game terminating: env_episode_reward=0.0 episode_length=688
+Episode finished. Sum of shaped rewards: 0.00. Length: 688. Bonus: 0.0518.
+[2018-05-20 21:03:13,136] Resetting environment logs
+Global Step Counter: 739367
+[2018-05-20 21:03:34,606] True Game terminating: env_episode_reward=0.0 episode_length=966
+Episode finished. Sum of shaped rewards: 0.00. Length: 966. Bonus: 0.0951.
+[2018-05-20 21:03:34,629] Resetting environment logs
+Global Step Counter: 756759
+[2018-05-20 21:03:49,418] True Game terminating: env_episode_reward=0.0 episode_length=662
+Episode finished. Sum of shaped rewards: 0.00. Length: 662. Bonus: 0.0327.
+[2018-05-20 21:03:49,439] Resetting environment logs
+Global Step Counter: 768512
+[2018-05-20 21:04:02,256] True Game terminating: env_episode_reward=0.0 episode_length=557
+Episode finished. Sum of shaped rewards: 0.00. Length: 557. Bonus: 0.0243.
+[2018-05-20 21:04:02,279] Resetting environment logs
+Global Step Counter: 778462
+[2018-05-20 21:04:25,279] True Game terminating: env_episode_reward=0.0 episode_length=987
+Episode finished. Sum of shaped rewards: 0.00. Length: 987. Bonus: 0.0688.
+[2018-05-20 21:04:25,302] Resetting environment logs
+Global Step Counter: 796240
+[2018-05-20 21:05:07,602] True Game terminating: env_episode_reward=0.0 episode_length=1800
+Episode finished. Sum of shaped rewards: 0.00. Length: 1800. Bonus: 0.1801.
+[2018-05-20 21:05:07,626] Resetting environment logs
+Global Step Counter: 828660
+[2018-05-20 21:05:25,841] True Game terminating: env_episode_reward=0.0 episode_length=763
+Episode finished. Sum of shaped rewards: 0.00. Length: 763. Bonus: 0.0576.
+[2018-05-20 21:05:25,863] Resetting environment logs
+Global Step Counter: 842717
+[2018-05-20 21:05:37,051] True Game terminating: env_episode_reward=0.0 episode_length=467
+Episode finished. Sum of shaped rewards: 0.00. Length: 467. Bonus: 0.0248.
+[2018-05-20 21:05:37,083] Resetting environment logs
+Global Step Counter: 851247
+[2018-05-20 21:06:01,386] True Game terminating: env_episode_reward=0.0 episode_length=1040
+Episode finished. Sum of shaped rewards: 0.00. Length: 1040. Bonus: 0.0626.
+[2018-05-20 21:06:01,408] Resetting environment logs
+Global Step Counter: 869766
+[2018-05-20 21:06:16,248] True Game terminating: env_episode_reward=0.0 episode_length=623
+Episode finished. Sum of shaped rewards: 0.00. Length: 623. Bonus: 0.0561.
+[2018-05-20 21:06:16,274] Resetting environment logs
+Global Step Counter: 880973
+[2018-05-20 21:06:40,249] True Game terminating: env_episode_reward=0.0 episode_length=986
+Episode finished. Sum of shaped rewards: 0.00. Length: 986. Bonus: 0.0397.
+[2018-05-20 21:06:40,268] Resetting environment logs
+Global Step Counter: 898714
+[2018-05-20 21:07:06,002] True Game terminating: env_episode_reward=0.0 episode_length=1087
+Episode finished. Sum of shaped rewards: 0.00. Length: 1087. Bonus: 0.0931.
+[2018-05-20 21:07:06,023] Resetting environment logs
+Global Step Counter: 918375
+[2018-05-20 21:07:31,955] True Game terminating: env_episode_reward=0.0 episode_length=1109
+Episode finished. Sum of shaped rewards: 0.00. Length: 1109. Bonus: 0.0597.
+[2018-05-20 21:07:31,990] Resetting environment logs
+Global Step Counter: 938303
+[2018-05-20 21:07:59,424] True Game terminating: env_episode_reward=0.0 episode_length=1207
+Episode finished. Sum of shaped rewards: 0.00. Length: 1207. Bonus: 1.3432.
+[2018-05-20 21:07:59,445] Resetting environment logs
+Global Step Counter: 959885
+[2018-05-20 21:08:13,916] True Game terminating: env_episode_reward=0.0 episode_length=695
+Episode finished. Sum of shaped rewards: 0.00. Length: 695. Bonus: 0.4744.
+[2018-05-20 21:08:13,939] Resetting environment logs
+Global Step Counter: 972217
+[2018-05-20 21:08:59,125] True Game terminating: env_episode_reward=0.0 episode_length=2137
+Episode finished. Sum of shaped rewards: 0.00. Length: 2137. Bonus: 0.2333.
+[2018-05-20 21:08:59,148] Resetting environment logs
+Global Step Counter: 1010733
+[2018-05-20 21:09:09,322] True Game terminating: env_episode_reward=0.0 episode_length=480
+Episode finished. Sum of shaped rewards: 0.00. Length: 480. Bonus: 0.0388.
+[2018-05-20 21:09:09,350] Resetting environment logs
+Global Step Counter: 1019341
+[2018-05-20 21:09:25,035] True Game terminating: env_episode_reward=0.0 episode_length=740
+Episode finished. Sum of shaped rewards: 0.00. Length: 740. Bonus: 0.0455.
+[2018-05-20 21:09:25,057] Resetting environment logs
+Global Step Counter: 1032679
+[2018-05-20 21:09:46,885] True Game terminating: env_episode_reward=0.0 episode_length=1051
+Episode finished. Sum of shaped rewards: 0.00. Length: 1051. Bonus: 0.1116.
+[2018-05-20 21:09:46,906] Resetting environment logs
+Global Step Counter: 1051478
+[2018-05-20 21:10:03,723] True Game terminating: env_episode_reward=0.0 episode_length=814
+Episode finished. Sum of shaped rewards: 0.00. Length: 814. Bonus: 0.0626.
+[2018-05-20 21:10:03,744] Resetting environment logs
+Global Step Counter: 1065961
+[2018-05-20 21:10:18,808] True Game terminating: env_episode_reward=0.0 episode_length=711
+Episode finished. Sum of shaped rewards: 0.00. Length: 711. Bonus: 0.0612.
+[2018-05-20 21:10:18,828] Resetting environment logs
+Global Step Counter: 1078843
+[2018-05-20 21:10:50,013] True Game terminating: env_episode_reward=0.0 episode_length=1461
+Episode finished. Sum of shaped rewards: 0.00. Length: 1461. Bonus: 0.0879.
+[2018-05-20 21:10:50,045] Resetting environment logs
+Global Step Counter: 1105479
+[2018-05-20 21:11:10,398] True Game terminating: env_episode_reward=0.0 episode_length=955
+Episode finished. Sum of shaped rewards: 0.00. Length: 955. Bonus: 0.1193.
+[2018-05-20 21:11:10,420] Resetting environment logs
+Global Step Counter: 1122612
+[2018-05-20 21:11:26,979] True Game terminating: env_episode_reward=0.0 episode_length=787
+Episode finished. Sum of shaped rewards: 0.00. Length: 787. Bonus: 0.0814.
+[2018-05-20 21:11:27,001] Resetting environment logs
+Global Step Counter: 1136686
+[2018-05-20 21:11:47,654] True Game terminating: env_episode_reward=0.0 episode_length=992
+Episode finished. Sum of shaped rewards: 0.00. Length: 992. Bonus: 0.0419.
+[2018-05-20 21:11:47,696] Resetting environment logs
+Global Step Counter: 1154238
+[2018-05-20 21:12:00,096] True Game terminating: env_episode_reward=0.0 episode_length=605
+Episode finished. Sum of shaped rewards: 0.00. Length: 605. Bonus: 0.0611.
+[2018-05-20 21:12:00,117] Resetting environment logs
+Global Step Counter: 1164921
+[2018-05-20 21:12:14,621] True Game terminating: env_episode_reward=0.0 episode_length=672
+Episode finished. Sum of shaped rewards: 0.00. Length: 672. Bonus: 0.0501.
+[2018-05-20 21:12:14,646] Resetting environment logs
+Global Step Counter: 1177181
+[2018-05-20 21:12:30,941] True Game terminating: env_episode_reward=0.0 episode_length=773
+Episode finished. Sum of shaped rewards: 0.00. Length: 773. Bonus: 0.0593.
+[2018-05-20 21:12:30,964] Resetting environment logs
+Global Step Counter: 1190967
+[2018-05-20 21:12:51,488] True Game terminating: env_episode_reward=0.0 episode_length=961
+Episode finished. Sum of shaped rewards: 0.00. Length: 961. Bonus: 0.1111.
+[2018-05-20 21:12:51,518] Resetting environment logs
+Global Step Counter: 1208439
+[2018-05-20 21:13:08,759] True Game terminating: env_episode_reward=0.0 episode_length=803
+Episode finished. Sum of shaped rewards: 0.00. Length: 803. Bonus: 0.0497.
+[2018-05-20 21:13:08,782] Resetting environment logs
+Global Step Counter: 1222906
+[2018-05-20 21:13:25,949] True Game terminating: env_episode_reward=0.0 episode_length=797
+Episode finished. Sum of shaped rewards: 0.00. Length: 797. Bonus: 0.0474.
+[2018-05-20 21:13:25,969] Resetting environment logs
+Global Step Counter: 1237382
+[2018-05-20 21:13:45,629] True Game terminating: env_episode_reward=0.0 episode_length=943
+Episode finished. Sum of shaped rewards: 0.00. Length: 943. Bonus: 0.0954.
+[2018-05-20 21:13:45,654] Resetting environment logs
+Global Step Counter: 1254074
+[2018-05-20 21:14:30,971] True Game terminating: env_episode_reward=0.0 episode_length=2119
+Episode finished. Sum of shaped rewards: 0.00. Length: 2119. Bonus: 0.2277.
+[2018-05-20 21:14:30,996] Resetting environment logs
+Global Step Counter: 1291986
+[2018-05-20 21:14:53,299] True Game terminating: env_episode_reward=0.0 episode_length=1053
+Episode finished. Sum of shaped rewards: 0.00. Length: 1053. Bonus: 0.1296.
+[2018-05-20 21:14:53,319] Resetting environment logs
+Global Step Counter: 1310757
+[2018-05-20 21:15:03,987] True Game terminating: env_episode_reward=0.0 episode_length=486
+Episode finished. Sum of shaped rewards: 0.00. Length: 486. Bonus: 0.0370.
+[2018-05-20 21:15:04,013] Resetting environment logs
+Global Step Counter: 1319648
+[2018-05-20 21:15:20,654] True Game terminating: env_episode_reward=0.0 episode_length=784
+Episode finished. Sum of shaped rewards: 0.00. Length: 784. Bonus: 0.0918.
+[2018-05-20 21:15:20,683] Resetting environment logs
+Global Step Counter: 1333497
+[2018-05-20 21:15:34,932] True Game terminating: env_episode_reward=0.0 episode_length=646
+Episode finished. Sum of shaped rewards: 0.00. Length: 646. Bonus: 0.0863.
+[2018-05-20 21:15:34,958] Resetting environment logs
+Global Step Counter: 1345219
+[2018-05-20 21:15:49,329] True Game terminating: env_episode_reward=0.0 episode_length=671
+Episode finished. Sum of shaped rewards: 0.00. Length: 671. Bonus: 0.0895.
+[2018-05-20 21:15:49,351] Resetting environment logs
+Global Step Counter: 1357218
+[2018-05-20 21:16:14,596] True Game terminating: env_episode_reward=0.0 episode_length=1167
+Episode finished. Sum of shaped rewards: 0.00. Length: 1167. Bonus: 0.1361.
+[2018-05-20 21:16:14,619] Resetting environment logs
+Global Step Counter: 1378137
+[2018-05-20 21:16:29,317] True Game terminating: env_episode_reward=0.0 episode_length=671
+Episode finished. Sum of shaped rewards: 0.00. Length: 671. Bonus: 0.0864.
+[2018-05-20 21:16:29,339] Resetting environment logs
+Global Step Counter: 1390379
+[2018-05-20 21:16:41,047] True Game terminating: env_episode_reward=0.0 episode_length=552
+Episode finished. Sum of shaped rewards: 0.00. Length: 552. Bonus: 0.0888.
+[2018-05-20 21:16:41,070] Resetting environment logs
+Global Step Counter: 1400091
+[2018-05-20 21:16:49,103] True Game terminating: env_episode_reward=0.0 episode_length=361
+Episode finished. Sum of shaped rewards: 0.00. Length: 361. Bonus: 0.0183.
+[2018-05-20 21:16:49,126] Resetting environment logs
+Global Step Counter: 1406828
+[2018-05-20 21:17:04,391] True Game terminating: env_episode_reward=0.0 episode_length=682
+Episode finished. Sum of shaped rewards: 0.00. Length: 682. Bonus: 0.0245.
+[2018-05-20 21:17:04,421] Resetting environment logs
+Global Step Counter: 1419604
+[2018-05-20 21:17:41,221] True Game terminating: env_episode_reward=0.0 episode_length=1682
+Episode finished. Sum of shaped rewards: 0.00. Length: 1682. Bonus: 0.0974.
+[2018-05-20 21:17:41,253] Resetting environment logs
+Global Step Counter: 1449621
+[2018-05-20 21:17:57,504] True Game terminating: env_episode_reward=0.0 episode_length=719
+Episode finished. Sum of shaped rewards: 0.00. Length: 719. Bonus: 0.0567.
+[2018-05-20 21:17:57,528] Resetting environment logs
+Global Step Counter: 1462941
+[2018-05-20 21:18:13,308] True Game terminating: env_episode_reward=0.0 episode_length=673
+Episode finished. Sum of shaped rewards: 0.00. Length: 673. Bonus: 0.0535.
+[2018-05-20 21:18:13,329] Resetting environment logs
+Global Step Counter: 1475055
+[2018-05-20 21:18:25,389] True Game terminating: env_episode_reward=0.0 episode_length=518
+Episode finished. Sum of shaped rewards: 0.00. Length: 518. Bonus: 0.0645.
+[2018-05-20 21:18:25,420] Resetting environment logs
+Global Step Counter: 1484423
+[2018-05-20 21:18:40,312] True Game terminating: env_episode_reward=0.0 episode_length=640
+Episode finished. Sum of shaped rewards: 0.00. Length: 640. Bonus: 0.0877.
+[2018-05-20 21:18:40,332] Resetting environment logs
+Global Step Counter: 1496165
+F tensorflow/core/graph/graph.cc:89] Check failed: class_ == NC_UNINITIALIZED 

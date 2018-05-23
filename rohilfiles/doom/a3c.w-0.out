@@ -1,0 +1,149 @@
+[2018-05-01 20:39:25,594] Writing logs to file: /tmp/universe-22520.log
+I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:197] Initialize GrpcChannelCache for job ps -> {0 -> 127.0.0.1:12222}
+I tensorflow/core/distributed_runtime/rpc/grpc_channel.cc:197] Initialize GrpcChannelCache for job worker -> {0 -> localhost:12223, 1 -> 127.0.0.1:12224, 2 -> 127.0.0.1:12225, 3 -> 127.0.0.1:12226, 4 -> 127.0.0.1:12227, 5 -> 127.0.0.1:12228, 6 -> 127.0.0.1:12229, 7 -> 127.0.0.1:12230, 8 -> 127.0.0.1:12231, 9 -> 127.0.0.1:12232, 10 -> 127.0.0.1:12233, 11 -> 127.0.0.1:12234, 12 -> 127.0.0.1:12235, 13 -> 127.0.0.1:12236, 14 -> 127.0.0.1:12237, 15 -> 127.0.0.1:12238, 16 -> 127.0.0.1:12239, 17 -> 127.0.0.1:12240, 18 -> 127.0.0.1:12241, 19 -> 127.0.0.1:12242}
+I tensorflow/core/distributed_runtime/rpc/grpc_server_lib.cc:211] Started server with target: grpc://localhost:12223
+[2018-05-01 20:39:25,623] Making new env: ppaquette/DoomMyWayHome-v0
+[2018-05-01 20:39:28,854] Trainable vars:
+[2018-05-01 20:39:28,855]   global/l1/W:0 (3, 3, 4, 32)
+[2018-05-01 20:39:28,857]   global/l1/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,857]   global/l2/W:0 (3, 3, 32, 32)
+[2018-05-01 20:39:28,857]   global/l2/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,857]   global/l3/W:0 (3, 3, 32, 32)
+[2018-05-01 20:39:28,857]   global/l3/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,857]   global/l4/W:0 (3, 3, 32, 32)
+[2018-05-01 20:39:28,857]   global/l4/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,857]   global/RNN/BasicLSTMCell/Linear/Matrix:0 (544, 1024)
+[2018-05-01 20:39:28,858]   global/RNN/BasicLSTMCell/Linear/Bias:0 (1024,)
+[2018-05-01 20:39:28,858]   global/value/w:0 (256, 1)
+[2018-05-01 20:39:28,858]   global/value/b:0 (1,)
+[2018-05-01 20:39:28,858]   global/action/w:0 (256, 4)
+[2018-05-01 20:39:28,858]   global/action/b:0 (4,)
+[2018-05-01 20:39:28,858]   global/predictor/l1/W:0 (3, 3, 4, 32)
+[2018-05-01 20:39:28,858]   global/predictor/l1/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,858]   global/predictor/l2/W:0 (3, 3, 32, 32)
+[2018-05-01 20:39:28,858]   global/predictor/l2/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,858]   global/predictor/l3/W:0 (3, 3, 32, 32)
+[2018-05-01 20:39:28,859]   global/predictor/l3/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,859]   global/predictor/l4/W:0 (3, 3, 32, 32)
+[2018-05-01 20:39:28,859]   global/predictor/l4/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,859]   global/predictor/g1/w:0 (576, 256)
+[2018-05-01 20:39:28,859]   global/predictor/g1/b:0 (256,)
+[2018-05-01 20:39:28,859]   global/predictor/glast/w:0 (256, 4)
+[2018-05-01 20:39:28,859]   global/predictor/glast/b:0 (4,)
+[2018-05-01 20:39:28,859]   global/predictor/f1/w:0 (292, 256)
+[2018-05-01 20:39:28,859]   global/predictor/f1/b:0 (256,)
+[2018-05-01 20:39:28,859]   global/predictor/flast/w:0 (256, 288)
+[2018-05-01 20:39:28,860]   global/predictor/flast/b:0 (288,)
+[2018-05-01 20:39:28,860]   local/l1/W:0 (3, 3, 4, 32)
+[2018-05-01 20:39:28,860]   local/l1/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,860]   local/l2/W:0 (3, 3, 32, 32)
+[2018-05-01 20:39:28,860]   local/l2/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,860]   local/l3/W:0 (3, 3, 32, 32)
+[2018-05-01 20:39:28,860]   local/l3/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,860]   local/l4/W:0 (3, 3, 32, 32)
+[2018-05-01 20:39:28,860]   local/l4/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,861]   local/RNN/BasicLSTMCell/Linear/Matrix:0 (544, 1024)
+[2018-05-01 20:39:28,861]   local/RNN/BasicLSTMCell/Linear/Bias:0 (1024,)
+[2018-05-01 20:39:28,861]   local/value/w:0 (256, 1)
+[2018-05-01 20:39:28,861]   local/value/b:0 (1,)
+[2018-05-01 20:39:28,861]   local/action/w:0 (256, 4)
+[2018-05-01 20:39:28,861]   local/action/b:0 (4,)
+[2018-05-01 20:39:28,861]   local/predictor/l1/W:0 (3, 3, 4, 32)
+[2018-05-01 20:39:28,861]   local/predictor/l1/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,861]   local/predictor/l2/W:0 (3, 3, 32, 32)
+[2018-05-01 20:39:28,861]   local/predictor/l2/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,861]   local/predictor/l3/W:0 (3, 3, 32, 32)
+[2018-05-01 20:39:28,862]   local/predictor/l3/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,862]   local/predictor/l4/W:0 (3, 3, 32, 32)
+[2018-05-01 20:39:28,862]   local/predictor/l4/b:0 (1, 1, 1, 32)
+[2018-05-01 20:39:28,862]   local/predictor/g1/w:0 (576, 256)
+[2018-05-01 20:39:28,862]   local/predictor/g1/b:0 (256,)
+[2018-05-01 20:39:28,862]   local/predictor/glast/w:0 (256, 4)
+[2018-05-01 20:39:28,862]   local/predictor/glast/b:0 (4,)
+[2018-05-01 20:39:28,862]   local/predictor/f1/w:0 (292, 256)
+[2018-05-01 20:39:28,862]   local/predictor/f1/b:0 (256,)
+[2018-05-01 20:39:28,862]   local/predictor/flast/w:0 (256, 288)
+[2018-05-01 20:39:28,863]   local/predictor/flast/b:0 (288,)
+[2018-05-01 20:39:28,863] Events directory: tmp/doom/train_0
+[2018-05-01 20:39:30,496] Starting session. If this hangs, we're mostly likely waiting to connect to the parameter server. One common cause is that the parameter server DNS name isn't resolving yet, or is misspecified.
+I tensorflow/core/distributed_runtime/master_session.cc:993] Start master session b3ad2f733d2b6cd0 with config: 
+device_filters: "/job:ps"
+device_filters: "/job:worker/task:0/cpu:0"
+
+Using universe head design
+Using universe head design
+Using universe head design
+Using universe head design
+Using universe head design
+Using universe head design
+Optimizer: ADAM with lr: 0.000100
+Input observation shape:  (42, 42, 4)
+Traceback (most recent call last):
+  File "worker.py", line 188, in <module>
+    tf.app.run()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/platform/app.py", line 43, in run
+    sys.exit(main(sys.argv[:1] + flags_passthrough))
+  File "worker.py", line 180, in main
+    run(args, server)
+  File "worker.py", line 95, in run
+    with sv.managed_session(server.target, config=config) as sess, sess.as_default():
+  File "/usr/lib/python2.7/contextlib.py", line 17, in __enter__
+    return self.gen.next()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/supervisor.py", line 974, in managed_session
+    self.stop(close_summary_writer=close_summary_writer)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/supervisor.py", line 802, in stop
+    stop_grace_period_secs=self._stop_grace_secs)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/coordinator.py", line 386, in join
+    six.reraise(*self._exc_info_to_raise)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/supervisor.py", line 963, in managed_session
+    start_standard_services=start_standard_services)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/supervisor.py", line 720, in prepare_or_wait_for_session
+    init_feed_dict=self._init_feed_dict, init_fn=self._init_fn)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/session_manager.py", line 227, in prepare_session
+    config=config)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/session_manager.py", line 173, in _restore_checkpoint
+    saver.restore(sess, ckpt.model_checkpoint_path)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/saver.py", line 1388, in restore
+    {self.saver_def.filename_tensor_name: save_path})
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 766, in run
+    run_metadata_ptr)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 964, in _run
+    feed_dict_string, options, run_metadata)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1014, in _do_run
+    target_list, options, run_metadata)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/client/session.py", line 1034, in _do_call
+    raise type(e)(node_def, op, message)
+tensorflow.python.framework.errors_impl.NotFoundError: Key global/predictor/l4/W/Adam not found in checkpoint
+	 [[Node: save/RestoreV2_82 = RestoreV2[dtypes=[DT_FLOAT], _device="/job:ps/replica:0/task:0/cpu:0"](_recv_save/Const_0_S1, save/RestoreV2_82/tensor_names, save/RestoreV2_82/shape_and_slices)]]
+
+Caused by op u'save/RestoreV2_82', defined at:
+  File "worker.py", line 188, in <module>
+    tf.app.run()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/platform/app.py", line 43, in run
+    sys.exit(main(sys.argv[:1] + flags_passthrough))
+  File "worker.py", line 180, in main
+    run(args, server)
+  File "worker.py", line 49, in run
+    saver = FastSaver(variables_to_save)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/saver.py", line 1000, in __init__
+    self.build()
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/saver.py", line 1030, in build
+    restore_sequentially=self._restore_sequentially)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/saver.py", line 624, in build
+    restore_sequentially, reshape)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/saver.py", line 361, in _AddRestoreOps
+    tensors = self.restore_op(filename_tensor, saveable, preferred_shard)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/training/saver.py", line 200, in restore_op
+    [spec.tensor.dtype])[0])
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/ops/gen_io_ops.py", line 441, in restore_v2
+    dtypes=dtypes, name=name)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/framework/op_def_library.py", line 759, in apply_op
+    op_def=op_def)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 2240, in create_op
+    original_op=self._default_original_op, op_def=op_def)
+  File "/home/verma_rohil/noreward-rl/curiosity/local/lib/python2.7/site-packages/tensorflow/python/framework/ops.py", line 1128, in __init__
+    self._traceback = _extract_stack()
+
+NotFoundError (see above for traceback): Key global/predictor/l4/W/Adam not found in checkpoint
+	 [[Node: save/RestoreV2_82 = RestoreV2[dtypes=[DT_FLOAT], _device="/job:ps/replica:0/task:0/cpu:0"](_recv_save/Const_0_S1, save/RestoreV2_82/tensor_names, save/RestoreV2_82/shape_and_slices)]]
+

@@ -1,0 +1,6 @@
+model_checkpoint_path: "/scratch/doomicm/train/model.ckpt-1482077"
+all_model_checkpoint_paths: "/scratch/doomicm/train/model.ckpt-1409547"
+all_model_checkpoint_paths: "/scratch/doomicm/train/model.ckpt-1427838"
+all_model_checkpoint_paths: "/scratch/doomicm/train/model.ckpt-1445931"
+all_model_checkpoint_paths: "/scratch/doomicm/train/model.ckpt-1464092"
+all_model_checkpoint_paths: "/scratch/doomicm/train/model.ckpt-1482077"

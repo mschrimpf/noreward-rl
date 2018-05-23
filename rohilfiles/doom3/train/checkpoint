@@ -1,0 +1,6 @@
+model_checkpoint_path: "/scratch/doom3/train/model.ckpt-319384"
+all_model_checkpoint_paths: "/scratch/doom3/train/model.ckpt-246249"
+all_model_checkpoint_paths: "/scratch/doom3/train/model.ckpt-264349"
+all_model_checkpoint_paths: "/scratch/doom3/train/model.ckpt-282711"
+all_model_checkpoint_paths: "/scratch/doom3/train/model.ckpt-301028"
+all_model_checkpoint_paths: "/scratch/doom3/train/model.ckpt-319384"

@@ -124,8 +124,10 @@ class RunnerThread(threading.Thread):
         self.predictor = predictor
         self.envWrap = envWrap
         self.noReward = noReward
+        print("Initialized runner")
 
     def start_runner(self, sess, summary_writer):
+        print("Starting runner")
         self.sess = sess
         self.summary_writer = summary_writer
         self.start()
@@ -143,7 +145,9 @@ class RunnerThread(threading.Thread):
             # won't die with it, unless the timeout is set to some large number.  This is an empirical
             # observation.
 
+            # print("begin queue.put")
             self.queue.put(next(rollout_provider), timeout=600.0)
+            # print("end queue.put")
 
 
 def env_runner(env, policy, num_local_steps, summary_writer, render, predictor,
@@ -153,7 +157,9 @@ def env_runner(env, policy, num_local_steps, summary_writer, render, predictor,
     the policy, and as long as the rollout exceeds a certain length, the thread
     runner appends the policy to the queue.
     """
+    print("create env_runner - resetting")
     last_state = env.reset()
+    print("reset ok - retrieving initial features")
     last_features = policy.get_initial_features()  # reset lstm memory
     length = 0
     rewards = 0
@@ -162,11 +168,15 @@ def env_runner(env, policy, num_local_steps, summary_writer, render, predictor,
         ep_bonus = 0
         life_bonus = 0
 
+    print("starting loop")
     while True:
         terminal_end = False
+        # print("create partial rollout")
         rollout = PartialRollout(predictor is not None)
 
-        for _ in range(num_local_steps):
+        # print("looping local steps")
+        for num_local_step in range(num_local_steps):
+            # print("step {}/{}".format(num_local_step, num_local_steps))
             # run policy
             fetched = policy.act(last_state, *last_features)
             action, value_, features = fetched[0], fetched[1], fetched[2:]
@@ -411,9 +421,13 @@ class A3C(object):
         and updates the parameters.  The update is then sent to the parameter
         server.
         """
+        print("Begin process")
         sess.run(self.sync)  # copy weights from shared to local
+        print("pulling batch from queue: queue size: {}".format(self.runner.queue.qsize()))
         rollout = self.pull_batch_from_queue()
+        print("pulled batch - processing rollout")
         batch = process_rollout(rollout, gamma=constants['GAMMA'], lambda_=constants['LAMBDA'], clip=self.envWrap)
+        print("processed rollout")
 
         should_compute_summary = self.task == 0 and self.local_steps % 11 == 0
 

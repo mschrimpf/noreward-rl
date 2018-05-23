@@ -78,7 +78,7 @@ class Experiment(object):
 
     def __init__(self, id=0, name='base'):
         self.name = "base"
-        self.log_dir_base = os.path.join(os.path.dirname(__file__), '..', 'log')
+        self.log_dir_base = os.path.join(os.path.dirname(__file__), '..', 'log-42_42_1')
 
         # Recordings
         self.max_to_keep_checkpoints = 5
